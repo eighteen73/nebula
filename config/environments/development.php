@@ -5,7 +5,7 @@
  * @package Nebula
  */
 
-namespace eighteen73\Nebula;
+namespace Eighteen73\Nebula;
 
 use Roots\WPConfig\Config;
 use function Env\env;

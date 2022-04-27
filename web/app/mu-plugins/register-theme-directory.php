@@ -11,7 +11,7 @@
  * @package Nebula
  */
 
-namespace eighteen73\Nebula;
+namespace Eighteen73\Nebula;
 
 if ( ! defined( 'WP_DEFAULT_THEME' ) ) {
 	register_theme_directory( ABSPATH . 'wp-content/themes' );
