@@ -1,7 +1,7 @@
 <?php
 /**
  * Your base production configuration goes in this file. Environment-specific
- * overrides go in their respective config/environments/{{WP_ENV}}.php file.
+ * overrides go in their respective config/environments/{{WP_ENVIRONMENT_TYPE}}.php file.
  *
  * A good default policy is to deviate from the production config as little as
  * possible. Try to define as much of your configuration in this file as you
@@ -49,19 +49,22 @@ if ( file_exists( $root_dir . '/.env' ) ) {
 
 /**
  * Set up our global environment constant and load its config first
- * Default: production
+ * Fails of misconfiguration to ensure proper configuration
  */
-define( 'WP_ENV', env( 'WP_ENV' ) ?: 'production' );
-
-/*
- * Infer WP_ENVIRONMENT_TYPE based on WP_ENV
- */
-if ( preg_match( '/^(dev|review|trunk)/i', WP_ENV ) ) {
-	Config::define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENVIRONMENT_TYPE' ) ?: 'development' );
-} elseif ( preg_match( '/^(sta?g|mode?l|pre|demo)/i', WP_ENV ) ) {
-	Config::define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENVIRONMENT_TYPE' ) ?: 'staging' );
-} else {
-	Config::define( 'WP_ENVIRONMENT_TYPE', env( 'WP_ENVIRONMENT_TYPE' ) ?: 'production' );
+switch ( env( 'WP_ENVIRONMENT_TYPE' ) ) {
+	case 'development':
+	case 'local':
+		Config::define( 'WP_ENVIRONMENT_TYPE', 'development' );
+		break;
+	case 'staging':
+		Config::define( 'WP_ENVIRONMENT_TYPE', 'staging' );
+		break;
+	case 'production':
+		Config::define( 'WP_ENVIRONMENT_TYPE', 'production' );
+		break;
+	default:
+		echo 'Missing or invalid WP_ENVIRONMENT_TYPE setting.';
+		die;
 }
 
 /**
@@ -137,7 +140,7 @@ if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_P
 	$_SERVER['HTTPS'] = 'on';
 }
 
-$env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
+$env_config = __DIR__ . '/environments/' . Config::get( 'WP_ENVIRONMENT_TYPE' ) . '.php';
 
 if ( file_exists( $env_config ) ) {
 	require_once $env_config;
