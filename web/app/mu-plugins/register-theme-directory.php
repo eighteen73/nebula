@@ -5,7 +5,6 @@
  * Description:  Register default theme directory
  * Version:      1.0.0
  * Author:       eighteen73
- * Author URI:   https://eighteen73.agency/
  * License:      MIT License
  *
  * @package Nebula

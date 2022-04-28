@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<ruleset name="eighteen73-Nebula">
-	<description>eighteen73 Nebula</description>
+<ruleset name="Eighteen73-Nebula">
+	<description>Eighteen73 Nebula</description>
 
 	<!-- Scan all files in directory -->
 	<file>.</file>
