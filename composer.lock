@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6974b34f57046a264b848b0102d0efdf",
+    "content-hash": "66b7a3eb52ebda42e6569a757311414e",
     "packages": [
         {
             "name": "composer/installers",
@@ -197,6 +197,44 @@
                 "source": "https://github.com/eighteen73/nebula-tools/tree/main"
             },
             "time": "2022-04-29T10:41:45+00:00"
+        },
+        {
+            "name": "eighteen73/orbit",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eighteen73/orbit.git",
+                "reference": "e7486613ac317f626d7f51915a352d2153f99346"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eighteen73/orbit/zipball/e7486613ac317f626d7f51915a352d2153f99346",
+                "reference": "e7486613ac317f626d7f51915a352d2153f99346",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "eighteen73/phpcs-composer": "dev-main"
+            },
+            "default-branch": true,
+            "type": "wordpress-muplugin",
+            "autoload": {
+                "psr-4": {
+                    "Eighteen73\\Orbit\\": "includes/classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Opinionated WordPress behaviour overrides",
+            "support": {
+                "issues": "https://github.com/eighteen73/orbit/issues",
+                "source": "https://github.com/eighteen73/orbit/tree/main"
+            },
+            "time": "2022-04-29T12:42:11+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -2263,6 +2301,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "eighteen73/nebula-tools": 20,
+        "eighteen73/orbit": 20,
         "roave/security-advisories": 20,
         "eighteen73/phpcs-composer": 20,
         "eighteen73/satellite": 20
@@ -2273,5 +2312,5 @@
         "php": ">=7.4"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }
