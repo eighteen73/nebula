@@ -44,7 +44,8 @@
     "squizlabs/php_codesniffer": "^3.6.2",
     "roave/security-advisories": "dev-latest",
     "eighteen73/phpcs-composer": "dev-main",
-    "eighteen73/satellite": "dev-main"
+    "eighteen73/satellite": "dev-main",
+    "wp-cli/wp-cli-bundle": "^2.6"
   },
   "config": {
     "optimize-autoloader": true,
