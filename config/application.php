@@ -117,6 +117,12 @@ Config::define( 'DISALLOW_FILE_MODS', true );
 Config::define( 'WP_POST_REVISIONS', $_ENV['WP_POST_REVISIONS'] ?? true );
 
 /**
+ * Uncomment if there's a plugin like wp-rocket or litespeed-cache that uses it.
+ * This also tends to prevent those reputable plugins from writing to wp-config.php
+ */
+// Config::define( 'WP_CACHE', true );
+
+/**
  * Debugging Settings
  */
 Config::define( 'WP_DEBUG_DISPLAY', false );
