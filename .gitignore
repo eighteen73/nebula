@@ -26,5 +26,6 @@ web/.htaccess
 # WP-CLI
 wp-cli.local.yml
 
-# Project files
-/.idea
+# OS & Project files
+.DS_Store
+.idea
