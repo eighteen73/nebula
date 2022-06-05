@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e57a216b8558a35ca9796473531c0c81",
+    "content-hash": "b26580c951faad8be69d0f84e540dd4e",
     "packages": [
         {
             "name": "composer/installers",
@@ -204,12 +204,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/eighteen73/orbit.git",
-                "reference": "870ffd1e422b12e1829cf4c968c9a89593e033a4"
+                "reference": "35253d73bd45555737dc3df193e201cf4a2c3645"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eighteen73/orbit/zipball/870ffd1e422b12e1829cf4c968c9a89593e033a4",
-                "reference": "870ffd1e422b12e1829cf4c968c9a89593e033a4",
+                "url": "https://api.github.com/repos/eighteen73/orbit/zipball/35253d73bd45555737dc3df193e201cf4a2c3645",
+                "reference": "35253d73bd45555737dc3df193e201cf4a2c3645",
                 "shasum": ""
             },
             "require": {
@@ -234,7 +234,7 @@
                 "issues": "https://github.com/eighteen73/orbit/issues",
                 "source": "https://github.com/eighteen73/orbit/tree/main"
             },
-            "time": "2022-06-04T15:42:49+00:00"
+            "time": "2022-06-04T20:59:37+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -2304,7 +2304,7 @@
         },
         {
             "name": "eighteen73/phpcs-composer",
-            "version": "dev-main",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eighteen73/phpcs-composer.git",
@@ -2322,7 +2322,6 @@
                 "squizlabs/php_codesniffer": "^3.6",
                 "wp-coding-standards/wpcs": "^2.3"
             },
-            "default-branch": true,
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2340,22 +2339,22 @@
             ],
             "description": "Modestly opinionated PHPCS configuration",
             "support": {
-                "source": "https://github.com/eighteen73/phpcs-composer/tree/main"
+                "source": "https://github.com/eighteen73/phpcs-composer/tree/v1.0.0"
             },
             "time": "2022-06-04T11:29:18+00:00"
         },
         {
             "name": "eighteen73/satellite",
-            "version": "dev-main",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eighteen73/satellite.git",
-                "reference": "ecff2bbfc510840e4ee88047ba364fa874d8e1e4"
+                "reference": "342b4720a793683c86e95d5eafbb1396794c5765"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eighteen73/satellite/zipball/ecff2bbfc510840e4ee88047ba364fa874d8e1e4",
-                "reference": "ecff2bbfc510840e4ee88047ba364fa874d8e1e4",
+                "url": "https://api.github.com/repos/eighteen73/satellite/zipball/342b4720a793683c86e95d5eafbb1396794c5765",
+                "reference": "342b4720a793683c86e95d5eafbb1396794c5765",
                 "shasum": ""
             },
             "require": {
@@ -2365,7 +2364,6 @@
             "require-dev": {
                 "eighteen73/phpcs-composer": "dev-main"
             },
-            "default-branch": true,
             "type": "wordpress-muplugin",
             "autoload": {
                 "psr-4": {
@@ -2379,9 +2377,9 @@
             "description": "A collection of developer tools for WordPress projects",
             "support": {
                 "issues": "https://github.com/eighteen73/satellite/issues",
-                "source": "https://github.com/eighteen73/satellite/tree/main"
+                "source": "https://github.com/eighteen73/satellite/tree/v1.0.0"
             },
-            "time": "2022-06-04T16:36:43+00:00"
+            "time": "2022-06-04T20:55:56+00:00"
         },
         {
             "name": "gettext/gettext",
@@ -6397,9 +6395,7 @@
     "stability-flags": {
         "eighteen73/nebula-tools": 20,
         "eighteen73/orbit": 20,
-        "roave/security-advisories": 20,
-        "eighteen73/phpcs-composer": 20,
-        "eighteen73/satellite": 20
+        "roave/security-advisories": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -6407,5 +6403,5 @@
         "php": ">=7.4"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

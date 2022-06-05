@@ -17,7 +17,7 @@ use Carbon_Fields\Carbon_Fields;
 add_action(
 	'after_setup_theme',
 	function() {
-		define( 'Carbon_Fields\URL', home_url( '/vendor/htmlburger/carbon-fields' ) );
+		define( 'Carbon_Fields\URL', home_url( '/app/libraries/carbon-fields' ) );
 		Carbon_Fields::boot();
 	}
 );
