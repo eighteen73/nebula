@@ -42,7 +42,7 @@ Nebula is heavily based on [Bedrock](https://github.com/roots/bedrock) by [Roots
 - `WP_SITEURL` - Full URL to WordPress including subdirectory (https://example.com/wp)
 - `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
   - Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
-  - Generate with [the Roots WordPress salts generator](https://roots.io/salts.html)
+  - Generate with [the Nebula keys generator](https://nebula-keys.eighteen73.co.uk/)
 
 3. Add theme(s) in `web/app/themes/` as you would for a normal WordPress site
 4. Set the document root on your webserver to Nebula's `web` folder: `/path/to/site/web/`
