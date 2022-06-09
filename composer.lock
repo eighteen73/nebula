@@ -1389,24 +1389,24 @@
         },
         {
             "name": "eighteen73/satellite",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eighteen73/satellite.git",
-                "reference": "342b4720a793683c86e95d5eafbb1396794c5765"
+                "reference": "5cddfb34e3473412c31958023619b97e385fef9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eighteen73/satellite/zipball/342b4720a793683c86e95d5eafbb1396794c5765",
-                "reference": "342b4720a793683c86e95d5eafbb1396794c5765",
+                "url": "https://api.github.com/repos/eighteen73/satellite/zipball/5cddfb34e3473412c31958023619b97e385fef9a",
+                "reference": "5cddfb34e3473412c31958023619b97e385fef9a",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4",
-                "wp-cli/db-command": "^2.0"
+                "wp-cli/db-command": "^1.3|^2.0"
             },
             "require-dev": {
-                "eighteen73/phpcs-composer": "dev-main"
+                "eighteen73/phpcs-composer": "^v1.0"
             },
             "type": "wordpress-muplugin",
             "autoload": {
@@ -1421,9 +1421,9 @@
             "description": "A collection of developer tools for WordPress projects",
             "support": {
                 "issues": "https://github.com/eighteen73/satellite/issues",
-                "source": "https://github.com/eighteen73/satellite/tree/v1.0.0"
+                "source": "https://github.com/eighteen73/satellite/tree/v1.0.1"
             },
-            "time": "2022-06-04T20:55:56+00:00"
+            "time": "2022-06-08T11:15:56+00:00"
         },
         {
             "name": "mustache/mustache",
@@ -2262,24 +2262,90 @@
             "time": "2021-12-12T21:44:58+00:00"
         },
         {
-            "name": "symfony/finder",
-            "version": "v6.1.0",
+            "name": "symfony/deprecation-contracts",
+            "version": "v2.5.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/finder.git",
-                "reference": "45b8beb69d6eb3b05a65689ebfd4222326773f8f"
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/45b8beb69d6eb3b05a65689ebfd4222326773f8f",
-                "reference": "45b8beb69d6eb3b05a65689ebfd4222326773f8f",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
+                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.1"
+                "php": ">=7.1"
             },
-            "require-dev": {
-                "symfony/filesystem": "^6.0"
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.5-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-01-02T09:53:40+00:00"
+        },
+        {
+            "name": "symfony/finder",
+            "version": "v5.4.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "9b630f3427f3ebe7cd346c277a1408b00249dad9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/9b630f3427f3ebe7cd346c277a1408b00249dad9",
+                "reference": "9b630f3427f3ebe7cd346c277a1408b00249dad9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1|^3",
+                "symfony/polyfill-php80": "^1.16"
             },
             "type": "library",
             "autoload": {
@@ -2307,7 +2373,7 @@
             "description": "Finds files and directories via an intuitive fluent interface",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/finder/tree/v6.1.0"
+                "source": "https://github.com/symfony/finder/tree/v5.4.8"
             },
             "funding": [
                 {
@@ -2323,7 +2389,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-04-15T08:08:08+00:00"
+            "time": "2022-04-15T08:07:45+00:00"
         },
         {
             "name": "wp-cli/db-command",
