@@ -40,7 +40,7 @@
     "mnsami/composer-custom-directory-installer": "^2.0"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.6.2",
+    "squizlabs/php_codesniffer": "^3.7.0",
     "roave/security-advisories": "dev-latest",
     "eighteen73/phpcs-composer": "^1.0",
     "eighteen73/satellite": "^1.0"
