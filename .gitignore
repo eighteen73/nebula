@@ -34,3 +34,4 @@ web/app/cache
 web/app/advanced-cache.php
 web/app/wp-rocket-config
 web/app/webp-express
+/web/app/themes/twentytwentytwo
