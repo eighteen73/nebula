@@ -29,15 +29,13 @@
   "require": {
     "php": ">=7.4",
     "composer/installers": "^1.0|^2.1",
-    "eighteen73/nebula-tools": "dev-main",
-    "eighteen73/orbit": "dev-main",
+    "eighteen73/nebula-tools": "^v1.0.0",
+    "eighteen73/orbit": "^v1.0.0",
     "vlucas/phpdotenv": "^5.4",
     "roots/bedrock-autoloader": "^1.0",
     "roots/wordpress": "^6.0",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
-    "htmlburger/carbon-fields": "^3.3",
-    "mnsami/composer-custom-directory-installer": "^2.0",
     "wpackagist-theme/twentytwentytwo": "^1.2"
   },
   "require-dev": {
@@ -52,8 +50,7 @@
     "allow-plugins": {
       "composer/installers": true,
       "roots/wordpress-core-installer": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true,
-      "mnsami/composer-custom-directory-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
   "minimum-stability": "dev",
@@ -62,8 +59,7 @@
     "installer-paths": {
       "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"],
-      "web/app/libraries/{$name}/": ["htmlburger/carbon-fields"]
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
     "wordpress-install-dir": "web/wp"
   },

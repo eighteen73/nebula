@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c7f91cc01c76887190c8169434dc3359",
+    "content-hash": "80273bb8c274a90da755d38c7eaa9399",
     "packages": [
         {
             "name": "composer/installers",
@@ -152,16 +152,16 @@
         },
         {
             "name": "eighteen73/nebula-tools",
-            "version": "dev-main",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eighteen73/nebula-tools.git",
-                "reference": "4d3b7740432e958b81f667c096fd890226192d41"
+                "reference": "c470781b90d47b894ed02108f3a7736c15bf0532"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eighteen73/nebula-tools/zipball/4d3b7740432e958b81f667c096fd890226192d41",
-                "reference": "4d3b7740432e958b81f667c096fd890226192d41",
+                "url": "https://api.github.com/repos/eighteen73/nebula-tools/zipball/c470781b90d47b894ed02108f3a7736c15bf0532",
+                "reference": "c470781b90d47b894ed02108f3a7736c15bf0532",
                 "shasum": ""
             },
             "require": {
@@ -171,7 +171,6 @@
             "require-dev": {
                 "eighteen73/phpcs-composer": "^v1.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -195,32 +194,31 @@
             "description": "A library of tools for Nebula WordPress websites.",
             "support": {
                 "issues": "https://github.com/eighteen73/nebula-tools/issues",
-                "source": "https://github.com/eighteen73/nebula-tools/tree/main"
+                "source": "https://github.com/eighteen73/nebula-tools/tree/v1.0.0"
             },
-            "time": "2022-06-18T15:25:54+00:00"
+            "time": "2022-06-18T15:16:22+00:00"
         },
         {
             "name": "eighteen73/orbit",
-            "version": "dev-main",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eighteen73/orbit.git",
-                "reference": "a6ec541ed3af909c7668d6d73304f567829ce064"
+                "reference": "17726f5099fc3fe8e42a5865466581f831f96529"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eighteen73/orbit/zipball/a6ec541ed3af909c7668d6d73304f567829ce064",
-                "reference": "a6ec541ed3af909c7668d6d73304f567829ce064",
+                "url": "https://api.github.com/repos/eighteen73/orbit/zipball/17726f5099fc3fe8e42a5865466581f831f96529",
+                "reference": "17726f5099fc3fe8e42a5865466581f831f96529",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.4"
             },
             "require-dev": {
-                "eighteen73/phpcs-composer": "^1.0.0",
+                "eighteen73/phpcs-composer": "^v1.0.0",
                 "htmlburger/carbon-fields": "^3.3"
             },
-            "default-branch": true,
             "type": "wordpress-muplugin",
             "autoload": {
                 "psr-4": {
@@ -234,9 +232,9 @@
             "description": "Opinionated WordPress behaviour overrides",
             "support": {
                 "issues": "https://github.com/eighteen73/orbit/issues",
-                "source": "https://github.com/eighteen73/orbit/tree/main"
+                "source": "https://github.com/eighteen73/orbit/tree/v1.0.0"
             },
-            "time": "2022-07-05T16:21:15+00:00"
+            "time": "2022-07-02T09:06:54+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -299,201 +297,6 @@
                 }
             ],
             "time": "2021-11-21T21:41:47+00:00"
-        },
-        {
-            "name": "htmlburger/carbon-fields",
-            "version": "v3.3.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/htmlburger/carbon-fields.git",
-                "reference": "2ae6773c004b873a1b0456613b14852c1a436a96"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/2ae6773c004b873a1b0456613b14852c1a436a96",
-                "reference": "2ae6773c004b873a1b0456613b14852c1a436a96",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "require-dev": {
-                "mockery/mockery": "^0.9.7",
-                "phpunit/phpunit": "~4.8"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Carbon_Fields\\": "core/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "htmlBurger",
-                    "email": "wordpress@htmlburger.com",
-                    "homepage": "https://htmlburger.com/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Miroslav Mitev",
-                    "email": "mmitev.2create@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Atanas Angelov",
-                    "email": "atanas.angelov.dev@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Georgi Stoyanov",
-                    "email": "stoyanov.gs@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Plamen Kostadinov",
-                    "email": "pkostadinov.2create@gmail.com",
-                    "homepage": "http://plasmen.info/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Stanimir Panchev",
-                    "email": "Stan4omir@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Marin Atanasov",
-                    "email": "contact@marinatanasov.com",
-                    "homepage": "http://marinatanasov.com/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Siyan Panayotov",
-                    "homepage": "http://siyanpanayotov.com/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Peter Petrov",
-                    "email": "peter.petrov89@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Stanimir Stoyanov",
-                    "email": "stanimir.k.stoyanov@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Kaloyan Ivanov",
-                    "email": "kaloyanxivanov@gmail.com",
-                    "homepage": "http://vilepixels.com/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Georgi Popov",
-                    "homepage": "http://magadanski.com/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "German Velchev",
-                    "email": "germozy@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Rashko Petrov",
-                    "email": "brutalenemy666@gmail.com",
-                    "homepage": "http://errorfactory.com/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Alexander Panayotov",
-                    "email": "alexander.panayotov@gmail.com",
-                    "homepage": "http://alexanderpanayotov.com/",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Viktor Vasilev",
-                    "email": "liberalcho@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Georgi Georgiev",
-                    "email": "george.georgiev96@gmail.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Atanas Vasilev",
-                    "email": "atanasvasilev91@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "WordPress developer-friendly custom fields for post types, taxonomy terms, users, comments, widgets, options and more.",
-            "homepage": "http://carbonfields.net/",
-            "support": {
-                "docs": "http://carbonfields.net/docs/",
-                "email": "wordpress@htmlburger.com",
-                "issues": "https://github.com/htmlburger/carbon-fields/issues",
-                "source": "https://github.com/htmlburger/carbon-fields"
-            },
-            "time": "2022-05-05T14:49:59+00:00"
-        },
-        {
-            "name": "mnsami/composer-custom-directory-installer",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mnsami/composer-custom-directory-installer.git",
-                "reference": "85f66323978d0b1cb0e6acc7f69b3e7b912f82d9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mnsami/composer-custom-directory-installer/zipball/85f66323978d0b1cb0e6acc7f69b3e7b912f82d9",
-                "reference": "85f66323978d0b1cb0e6acc7f69b3e7b912f82d9",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0 || ^2.0",
-                "php": ">=5.3"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": [
-                    "Composer\\CustomDirectoryInstaller\\LibraryPlugin",
-                    "Composer\\CustomDirectoryInstaller\\PearPlugin",
-                    "Composer\\CustomDirectoryInstaller\\PluginPlugin"
-                ],
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Composer\\CustomDirectoryInstaller": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mina Nabil Sami",
-                    "email": "mina.nsami@gmail.com"
-                }
-            ],
-            "description": "A composer plugin, to help install packages of different types in custom paths.",
-            "keywords": [
-                "composer",
-                "composer-installer",
-                "composer-plugin"
-            ],
-            "support": {
-                "issues": "https://github.com/mnsami/composer-custom-directory-installer/issues",
-                "source": "https://github.com/mnsami/composer-custom-directory-installer/tree/2.0.0"
-            },
-            "time": "2020-08-18T11:00:11+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -1368,26 +1171,34 @@
         },
         {
             "name": "eighteen73/phpcs-composer",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/eighteen73/phpcs-composer.git",
-                "reference": "37c5fa1e4b0dc7f9381d9be73ee785ddc5640cb6"
-            },
+            "version": "dev-main",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/eighteen73/phpcs-composer/zipball/37c5fa1e4b0dc7f9381d9be73ee785ddc5640cb6",
-                "reference": "37c5fa1e4b0dc7f9381d9be73ee785ddc5640cb6",
-                "shasum": ""
+                "type": "path",
+                "url": "/Users/ed/Sites/_github/phpcs-composer",
+                "reference": "e4ded787f74ea28ee9b85c21c050e351a50a091d"
             },
             "require": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
                 "phpcompatibility/phpcompatibility-wp": "^2.1",
                 "squizlabs/php_codesniffer": "^3.6",
-                "wp-coding-standards/wpcs": "^2.3"
+                "wp-coding-standards/wpcs": "dev-develop"
             },
             "type": "phpcodesniffer-standard",
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "config-cs": [
+                    "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run",
+                    "\"vendor/bin/phpcs\" --config-set default_standard Eighteen73-WordPress-Default"
+                ],
+                "post-install-cmd": [
+                    "@config-cs"
+                ],
+                "post-update-cmd": [
+                    "@config-cs"
+                ],
+                "lint": [
+                    "\"vendor/bin/phpcs\" . "
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -1402,10 +1213,10 @@
                 }
             ],
             "description": "Modestly opinionated PHPCS configuration",
-            "support": {
-                "source": "https://github.com/eighteen73/phpcs-composer/tree/v1.0.0"
-            },
-            "time": "2022-06-04T11:29:18+00:00"
+            "transport-options": {
+                "symlink": true,
+                "relative": false
+            }
         },
         {
             "name": "eighteen73/satellite",
@@ -1666,6 +1477,130 @@
                 "source": "https://github.com/PHPCompatibility/PHPCompatibilityWP"
             },
             "time": "2021-12-30T16:37:40+00:00"
+        },
+        {
+            "name": "phpcsstandards/phpcsextra",
+            "version": "1.0.0-alpha3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPCSStandards/PHPCSExtra.git",
+                "reference": "a8415f9c2b7360e7184aad803a2c7e2b0544b4f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSExtra/zipball/a8415f9c2b7360e7184aad803a2c7e2b0544b4f1",
+                "reference": "a8415f9c2b7360e7184aad803a2c7e2b0544b4f1",
+                "shasum": ""
+            },
+            "require": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.1 || ^0.5 || ^0.6.2 || ^0.7",
+                "php": ">=5.4",
+                "phpcsstandards/phpcsutils": "^1.0 || dev-develop",
+                "squizlabs/php_codesniffer": "^3.3.1"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-console-highlighter": "^0.5",
+                "php-parallel-lint/php-parallel-lint": "^1.0",
+                "phpcsstandards/phpcsdevtools": "^1.0",
+                "phpunit/phpunit": "^4.5 || ^5.0 || ^6.0 || ^7.0"
+            },
+            "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "homepage": "https://github.com/jrfnl",
+                    "role": "lead"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/PHPCSStandards/PHPCSExtra/graphs/contributors"
+                }
+            ],
+            "description": "A collection of sniffs and standards for use with PHP_CodeSniffer.",
+            "keywords": [
+                "PHP_CodeSniffer",
+                "phpcbf",
+                "phpcodesniffer-standard",
+                "phpcs",
+                "standards"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPCSStandards/PHPCSExtra/issues",
+                "source": "https://github.com/PHPCSStandards/PHPCSExtra"
+            },
+            "time": "2020-06-29T03:39:34+00:00"
+        },
+        {
+            "name": "phpcsstandards/phpcsutils",
+            "version": "1.0.0-alpha3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPCSStandards/PHPCSUtils.git",
+                "reference": "a16c989b8421e29c336ece5c4099b48585994673"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPCSStandards/PHPCSUtils/zipball/a16c989b8421e29c336ece5c4099b48585994673",
+                "reference": "a16c989b8421e29c336ece5c4099b48585994673",
+                "shasum": ""
+            },
+            "require": {
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.4.1 || ^0.5 || ^0.6.2 || ^0.7",
+                "php": ">=5.4",
+                "squizlabs/php_codesniffer": "^2.6.0 || ^3.1.0 || 4.0.x-dev@dev"
+            },
+            "conflict": {
+                "squizlabs/php_codesniffer": "3.5.3"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-console-highlighter": "^0.5",
+                "php-parallel-lint/php-parallel-lint": "^1.2.0",
+                "phpunit/phpunit": "^4.5 || ^5.0 || ^6.0 || ^7.0 || ^8.0 || ^9.0"
+            },
+            "type": "phpcodesniffer-standard",
+            "autoload": {
+                "classmap": [
+                    "PHPCSUtils/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "homepage": "https://github.com/jrfnl",
+                    "role": "lead"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/PHPCSStandards/PHPCSUtils/graphs/contributors"
+                }
+            ],
+            "description": "A suite of utility functions for use with PHP_CodeSniffer",
+            "homepage": "https://phpcsutils.com/",
+            "keywords": [
+                "PHP_CodeSniffer",
+                "phpcbf",
+                "phpcodesniffer-standard",
+                "phpcs",
+                "phpcs2",
+                "phpcs3",
+                "standards",
+                "tokens",
+                "utility"
+            ],
+            "support": {
+                "docs": "https://phpcsutils.com/",
+                "issues": "https://github.com/PHPCSStandards/PHPCSUtils/issues",
+                "source": "https://github.com/PHPCSStandards/PHPCSUtils"
+            },
+            "time": "2020-06-28T21:57:33+00:00"
         },
         {
             "name": "rmccue/requests",
@@ -2602,31 +2537,32 @@
         },
         {
             "name": "wp-coding-standards/wpcs",
-            "version": "2.3.0",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "7da1894633f168fe244afc6de00d141f27517b62"
+                "reference": "db97a6e5d20dfca706b0951a7b3ff3c0567ec78d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/7da1894633f168fe244afc6de00d141f27517b62",
-                "reference": "7da1894633f168fe244afc6de00d141f27517b62",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/db97a6e5d20dfca706b0951a7b3ff3c0567ec78d",
+                "reference": "db97a6e5d20dfca706b0951a7b3ff3c0567ec78d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4",
-                "squizlabs/php_codesniffer": "^3.3.1"
+                "phpcsstandards/phpcsextra": "^1.0",
+                "phpcsstandards/phpcsutils": "^1.0",
+                "squizlabs/php_codesniffer": "^3.7.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.5 || ^0.6",
+                "php-parallel-lint/php-console-highlighter": "^1.0.0",
+                "php-parallel-lint/php-parallel-lint": "^1.3.2",
                 "phpcompatibility/php-compatibility": "^9.0",
                 "phpcsstandards/phpcsdevtools": "^1.0",
                 "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
             },
-            "suggest": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.6 || This Composer plugin will sort out the PHPCS 'installed_paths' automatically."
-            },
+            "default-branch": true,
             "type": "phpcodesniffer-standard",
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2649,15 +2585,14 @@
                 "source": "https://github.com/WordPress/WordPress-Coding-Standards",
                 "wiki": "https://github.com/WordPress/WordPress-Coding-Standards/wiki"
             },
-            "time": "2020-05-13T23:57:56+00:00"
+            "time": "2022-07-01T08:38:21+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "eighteen73/nebula-tools": 20,
-        "eighteen73/orbit": 20,
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "eighteen73/phpcs-composer": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
