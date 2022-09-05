@@ -6,7 +6,7 @@ Nebula is a modern WordPress stack that helps you get started with the best deve
 
 Much of the philosophy behind Nebula is inspired by the [Twelve-Factor App](http://12factor.net/) methodology including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
 
-Nebula is heavily based on [Bedrock](https://github.com/roots/bedrock) by [Roots](https://roots.io/) with an eighten73 flavour.
+Nebula is heavily based on [Bedrock](https://github.com/roots/bedrock) by [Roots](https://roots.io/) with an eighteen73 flavour.
 
 ## Features
 
