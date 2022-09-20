@@ -153,16 +153,16 @@
         },
         {
             "name": "eighteen73/nebula-tools",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eighteen73/nebula-tools.git",
-                "reference": "c470781b90d47b894ed02108f3a7736c15bf0532"
+                "reference": "79b44e6d6fe33af8cb830b2eb4c65fd590d96b86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eighteen73/nebula-tools/zipball/c470781b90d47b894ed02108f3a7736c15bf0532",
-                "reference": "c470781b90d47b894ed02108f3a7736c15bf0532",
+                "url": "https://api.github.com/repos/eighteen73/nebula-tools/zipball/79b44e6d6fe33af8cb830b2eb4c65fd590d96b86",
+                "reference": "79b44e6d6fe33af8cb830b2eb4c65fd590d96b86",
                 "shasum": ""
             },
             "require": {
@@ -195,9 +195,9 @@
             "description": "A library of tools for Nebula WordPress websites.",
             "support": {
                 "issues": "https://github.com/eighteen73/nebula-tools/issues",
-                "source": "https://github.com/eighteen73/nebula-tools/tree/v1.0.0"
+                "source": "https://github.com/eighteen73/nebula-tools/tree/v1.0.1"
             },
-            "time": "2022-06-18T15:16:22+00:00"
+            "time": "2022-09-20T18:51:41+00:00"
         },
         {
             "name": "eighteen73/orbit",
