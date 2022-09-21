@@ -16,6 +16,7 @@ Config::define( 'WP_DEBUG_LOG', $_ENV['WP_DEBUG_LOG'] ?? true );
 Config::define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true );
 Config::define( 'SCRIPT_DEBUG', true );
 Config::define( 'DISALLOW_INDEXING', true );
+Config::define( 'WP_CACHE', false );
 
 ini_set( 'display_errors', '1' ); // PHPCS:ignore:WordPress.PHP.IniSet.display_errors_Blacklisted
 
