@@ -117,11 +117,11 @@ Config::define( 'DISALLOW_FILE_MODS', true );
 Config::define( 'WP_POST_REVISIONS', $_ENV['WP_POST_REVISIONS'] ?? true );
 
 /**
- * This tends to prevent plugins from writing the value to wp-config.php themselves, which should be 
- * an uneditable file in Nebula. It does make the assumption that the website will be using a caching 
- * solution but we feel that is fair assumption and best practice for our user base.
- * 
- * Note that it is disabled for developpment by default in config/environments/development.php
+ * This tends to prevent plugins from writing the value to wp-config.php themselves, which should be
+ * an uneditable file in Nebula. It does make the assumption that the website will be using a caching
+ * solution, but we feel that is fair assumption and best practice for our user base.
+ *
+ * Note that it is disabled for development by default in config/environments/development.php
  */
 Config::define( 'WP_CACHE', true );
 
