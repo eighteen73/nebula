@@ -32,7 +32,6 @@
     "eighteen73/nebula-tools": "^v1.0.2",
     "eighteen73/orbit": "^v1.0.0",
     "vlucas/phpdotenv": "^5.4",
-    "roots/bedrock-autoloader": "^1.0",
     "roots/wordpress": "^6.0",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
