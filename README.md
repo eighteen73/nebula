@@ -15,7 +15,7 @@ Nebula is heavily based on [Bedrock](https://github.com/roots/bedrock) by [Roots
 - Easy WordPress configuration with environment specific files
 - Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
 - Autoloader for mu-plugins (use regular plugins as mu-plugins)
-- Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
+- Enhanced security (separated web root and more secure password algorithm)
 
 ## Requirements
 
