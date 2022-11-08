@@ -30,7 +30,7 @@
     "php": ">=7.4",
     "composer/installers": "^2.2.0",
     "eighteen73/nebula-tools": "^v1.1.0",
-    "eighteen73/orbit": "^v1.0.0",
+    "eighteen73/orbit": "^v1.1.0",
     "vlucas/phpdotenv": "^5.4",
     "roots/wordpress": "^6.0",
     "roots/wp-config": "1.0.0",
