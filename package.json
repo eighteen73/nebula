@@ -1,0 +1,37 @@
+{
+  "name": "eighteen73-nebula",
+  "version": "1.0.0",
+  "workspaces": [
+    "web/app/themes/pulsar"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "production": "npm run production --workspaces --if-present",
+    "start": "npm run watch",
+    "watch:theme": "npm run watch -w=pulsar",
+    "watch": "run-p watch:theme",
+    "lint": "npm run lint --workspaces --if-present",
+		"lint:css": "npm run lint:css --workspaces --if-present",
+		"lint:js": "npm run lint:js --workspaces --if-present",
+		"lint:php": "npm run lint:php --workspaces --if-present",
+		"format:css": "npm run format:css --workspaces --if-present",
+		"format:js": "npm run format:js --workspaces --if-present",
+		"format:php": "npm run format:php --workspaces --if-present"
+  },
+  "author": {
+    "name": "Brett Mason",
+    "email": "brett@orphans.co.uk",
+    "role": "developer"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "devDependencies": {
+    "@wordpress/eslint-plugin": "^13.9.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.1.0",
+    "npm-run-all": "^4.1.5"
+  }
+}

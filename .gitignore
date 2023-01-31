@@ -5,7 +5,6 @@ web/app/mu-plugins/*/
 web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
-web/app/libraries/*
 
 # WordPress
 web/wp
@@ -19,9 +18,12 @@ web/.htaccess
 .env.*
 !.env.example
 
+# Node modules
+node_modules
+
 # Composer
-/composer.lock
-/vendor
+composer.lock
+vendor
 
 # WP-CLI
 wp-cli.local.yml
@@ -35,4 +37,4 @@ web/app/cache
 web/app/advanced-cache.php
 web/app/wp-rocket-config
 web/app/webp-express
-/web/app/themes/twentytwentytwo
+web/app/themes/twentytwentytwo
