@@ -105,6 +105,11 @@ Config::define( 'LOGGED_IN_SALT', $_ENV['LOGGED_IN_SALT'] );
 Config::define( 'NONCE_SALT', $_ENV['NONCE_SALT'] );
 
 /**
+ * Multisite
+ */
+Config::define( 'WP_ALLOW_MULTISITE', false );
+
+/**
  * Custom Settings
  */
 Config::define( 'AUTOMATIC_UPDATER_DISABLED', true );
