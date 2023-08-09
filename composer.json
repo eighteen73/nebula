@@ -32,7 +32,7 @@
     "eighteen73/nebula-tools": "^v1.1.0",
     "eighteen73/orbit": "^v1.2.0",
     "vlucas/phpdotenv": "^5.5",
-    "roots/wordpress": "^6.2",
+    "roots/wordpress": "^6.3",
     "roots/wp-config": "1.0.0",
     "wpackagist-theme/twentytwentytwo": "^1.4"
   },
