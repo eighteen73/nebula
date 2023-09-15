@@ -11,12 +11,12 @@
     "watch:theme": "npm run watch -w=pulsar",
     "watch": "run-p watch:theme",
     "lint": "npm run lint --workspaces --if-present",
-		"lint:css": "npm run lint:css --workspaces --if-present",
-		"lint:js": "npm run lint:js --workspaces --if-present",
-		"lint:php": "npm run lint:php --workspaces --if-present",
-		"format:css": "npm run format:css --workspaces --if-present",
-		"format:js": "npm run format:js --workspaces --if-present",
-		"format:php": "npm run format:php --workspaces --if-present"
+    "lint:css": "npm run lint:css --workspaces --if-present",
+    "lint:js": "npm run lint:js --workspaces --if-present",
+    "lint:php": "npm run lint:php --workspaces --if-present",
+    "format:css": "npm run format:css --workspaces --if-present",
+    "format:js": "npm run format:js --workspaces --if-present",
+    "format:php": "npm run format:php --workspaces --if-present"
   },
   "author": {
     "name": "Brett Mason",
@@ -29,9 +29,8 @@
     "npm": ">=7.0.0"
   },
   "devDependencies": {
-    "@wordpress/eslint-plugin": "^13.9.0",
     "husky": "^8.0.0",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "^14.0.0",
     "npm-run-all": "^4.1.5"
   }
 }
