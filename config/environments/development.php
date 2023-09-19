@@ -18,7 +18,7 @@ Config::define( 'SCRIPT_DEBUG', true );
 Config::define( 'DISALLOW_INDEXING', true );
 Config::define( 'WP_CACHE', false );
 
-ini_set( 'display_errors', '1' ); // PHPCS:ignore:WordPress.PHP.IniSet.display_errors_Blacklisted
+ini_set( 'display_errors', '1' ); // PHPCS:ignore:WordPress.PHP.IniSet.display_errors_Disallowed
 
 // Enable plugin and theme updates and installation from the admin
 Config::define( 'DISALLOW_FILE_MODS', false );
