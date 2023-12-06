@@ -32,15 +32,15 @@
     "eighteen73/nebula-tools": "^v1.1.0",
     "eighteen73/orbit": "^v1.2.0",
     "vlucas/phpdotenv": "^5.5",
-    "roots/wordpress": "^6.2",
+    "roots/wordpress": "^6.4",
     "roots/wp-config": "1.0.0",
-    "wpackagist-theme/twentytwentytwo": "^1.4"
+    "wpackagist-theme/twentytwentyfour": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.7.2",
     "roave/security-advisories": "dev-latest",
-    "eighteen73/phpcs-composer": "^1.0",
-    "eighteen73/satellite": "^1.1"
+    "eighteen73/satellite": "^1.1",
+    "eighteen73/wordpress-coding-standards": "^2.0"
   },
   "config": {
     "optimize-autoloader": true,
@@ -48,7 +48,8 @@
     "allow-plugins": {
       "composer/installers": true,
       "roots/wordpress-core-installer": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "mnsami/composer-custom-directory-installer": true
     }
   },
   "minimum-stability": "dev",
