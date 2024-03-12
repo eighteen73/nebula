@@ -84,12 +84,14 @@ Config::define( 'DB_COLLATE', '' );
 $table_prefix = $_ENV['DB_PREFIX'] ?? 'wp_';
 
 if ( isset( $_ENV['DATABASE_URL'] ) ) {
-	$dsn = (object) wp_parse_url( $_ENV['DATABASE_URL'] );
-
-	Config::define( 'DB_NAME', substr( $dsn->path, 1 ) );
-	Config::define( 'DB_USER', $dsn->user );
-	Config::define( 'DB_PASSWORD', isset( $dsn->pass ) ? $dsn->pass : null );
-	Config::define( 'DB_HOST', isset( $dsn->port ) ? "{$dsn->host}:{$dsn->port}" : $dsn->host );
+	$dsn = parse_url( $_ENV['DATABASE_URL'] );
+	Config::define( 'DB_NAME', substr( $dsn['path'], 1 ) );
+	Config::define( 'DB_USER', $dsn['user'] );
+	Config::define( 'DB_PASSWORD', $dsn['pass'] ?? null );
+	Config::define( 'DB_HOST', isset( $dsn['port'] ) ? "{$dsn['host']}:{$dsn['port']}" : $dsn['host'] );
+	if ( str_contains( $dsn['query'] ?? '', 'ssl-mode=REQUIRED' ) ) {
+		Config::define( 'MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL );
+	}
 }
 
 /**
