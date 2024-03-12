@@ -75,9 +75,9 @@ Config::define( 'WP_CONTENT_URL', Config::get( 'WP_HOME' ) . Config::get( 'CONTE
 /**
  * DB settings
  */
-Config::define( 'DB_NAME', $_ENV['DB_NAME'] );
-Config::define( 'DB_USER', $_ENV['DB_USER'] );
-Config::define( 'DB_PASSWORD', $_ENV['DB_PASSWORD'] );
+Config::define( 'DB_NAME', $_ENV['DB_NAME'] ?? '' );
+Config::define( 'DB_USER', $_ENV['DB_USER'] ?? '' );
+Config::define( 'DB_PASSWORD', $_ENV['DB_PASSWORD'] ?? '' );
 Config::define( 'DB_HOST', $_ENV['DB_HOST'] ?? 'localhost' );
 Config::define( 'DB_CHARSET', 'utf8mb4' );
 Config::define( 'DB_COLLATE', '' );
