@@ -1,0 +1,4 @@
+; Wordfence WAF
+; The following line needs to updated and uncommented to use Wordfence's WAF. See https://github.com/eighteen73/nebula/issues/28
+;auto_prepend_file = '/path/to/repo/vendor/eighteen73/nebula-tools/includes/wordfence-waf.php'
+; END Wordfence WAF

@@ -28,6 +28,7 @@ auth.json
 wp-cli.local.yml
 
 # OS & Project files
+web/.user.ini
 .DS_Store
 .idea
 
