@@ -1,0 +1,31 @@
+{
+	"name": "eighteen73-blocks",
+	"version": "0.1.0",
+	"description": "Custom blocks for an eighteen73 project",
+	"author": "eighteen73",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"production": "wp-scripts build  --experimental-modules",
+		"format": "wp-scripts format",
+		"lint:css": "stylelint './src/**/*.scss'",
+		"lint:js": "eslint './src/**/*.js'",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"watch": "wp-scripts start --experimental-modules",
+		"hot": "wp-scripts start --hot --experimental-modules",
+		"format:css": "stylelint --fix './src/**/*.scss'",
+		"format:js": "eslint --fix './src/**/*.js'",
+		"create-block": "cd src && npx @wordpress/create-block@latest --template @eighteen73/create-block-template --variant basic --no-plugin"
+	},
+	"files": [
+		"[^.]*"
+	],
+	"dependencies": {
+		"@eighteen73/eslint-config-wordpress": "^1.0.3",
+		"@eighteen73/stylelint-config-wordpress": "^1.1.2"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^29.0.0"
+	}
+}
