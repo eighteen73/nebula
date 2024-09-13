@@ -1,0 +1,18 @@
+{
+	"name": "eighteen73/core",
+	"description": "Core functionality for an eighteen73 project.",
+	"type": "wordpress-plugin",
+	"require-dev": {
+		"eighteen73/wordpress-coding-standards": "^2.0"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"scripts": {
+		"test": [
+			"phpcs"
+		]
+	}
+}
