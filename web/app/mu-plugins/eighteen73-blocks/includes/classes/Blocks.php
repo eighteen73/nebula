@@ -20,10 +20,6 @@ class Blocks {
 	 */
 	public function setup() {
 		add_action( 'init', [ $this, 'register' ] );
-
-		add_action('wp_body_open', function() {
-			echo '<div id="eighteen73-blocks"></div>';
-		});
 	}
 
 	/**

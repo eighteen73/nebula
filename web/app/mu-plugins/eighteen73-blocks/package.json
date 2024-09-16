@@ -6,7 +6,7 @@
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
-		"production": "wp-scripts build  --experimental-modules",
+		"production": "wp-scripts build --experimental-modules",
 		"format": "wp-scripts format",
 		"lint:css": "stylelint './src/**/*.scss'",
 		"lint:js": "eslint './src/**/*.js'",
