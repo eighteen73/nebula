@@ -28,7 +28,7 @@
   ],
   "require": {
     "php": ">=7.4",
-    "composer/installers": "^2.2.0",
+    "composer/installers": "^2.3.0",
     "eighteen73/nebula-tools": "^v1.1.0",
     "eighteen73/orbit": "^v1.2.0",
     "vlucas/phpdotenv": "^5.5",
