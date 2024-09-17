@@ -34,7 +34,7 @@
     "vlucas/phpdotenv": "^5.5",
     "roots/wordpress": "^6.4.2",
     "roots/wp-config": "1.0.0",
-    "wpackagist-theme/twentytwentyfour": "^1.0"
+    "wpackagist-theme/twentytwentyfour": "^1.2"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.8.0",
