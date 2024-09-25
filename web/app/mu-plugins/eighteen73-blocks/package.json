@@ -16,7 +16,7 @@
 		"hot": "wp-scripts start --hot --experimental-modules",
 		"format:css": "stylelint --fix './src/**/*.scss'",
 		"format:js": "eslint --fix './src/**/*.js'",
-		"create-block": "cd src && npx @wordpress/create-block@latest --template @eighteen73/create-block-template --variant basic --no-plugin"
+		"create-block": "npx @wordpress/create-block@latest --template @eighteen73/create-block-template --variant basic --no-plugin"
 	},
 	"files": [
 		"[^.]*"
