@@ -5,7 +5,7 @@
  * @package Eighteen73Core
  */
 
-namespace Eighteen73\Eighteen73Core;
+namespace Eighteen73\Core;
 
 trait Singleton {
 
