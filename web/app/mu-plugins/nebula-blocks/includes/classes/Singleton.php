@@ -2,10 +2,10 @@
 /**
  * Singleton trait
  *
- * @package Eighteen73\Blocks
+ * @package NebulaBlocks
  */
 
-namespace Eighteen73\Blocks;
+namespace Eighteen73\Nebula\Blocks;
 
 trait Singleton {
 

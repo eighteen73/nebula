@@ -2,10 +2,10 @@
 /**
  * Handles block registration.
  *
- * @package Eighteen73Blocks
+ * @package NebulaBlocks
  */
 
-namespace Eighteen73\Blocks;
+namespace Eighteen73\Nebula\Blocks;
 
 /**
  * Handles block registration.
@@ -32,7 +32,7 @@ class Blocks {
 	 * @see https://developer.wordpress.org/reference/functions/register_block_type/
 	 */
 	public function register() {
-		$blocks_directory = trailingslashit( EIGHTEEN73_BLOCKS_PATH . 'build' );
+		$blocks_directory = trailingslashit( NEBULA_BLOCKS_PATH . 'build' );
 
 		// Register all the blocks in the plugin.
 		if ( file_exists( $blocks_directory ) ) {

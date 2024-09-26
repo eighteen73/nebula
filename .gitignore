@@ -2,8 +2,8 @@
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*/
-!web/app/mu-plugins/eighteen73-core/
-!web/app/mu-plugins/eighteen73-blocks/
+!web/app/mu-plugins/nebula-core
+!web/app/mu-plugins/nebula-blocks
 web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep

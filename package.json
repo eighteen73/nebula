@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "workspaces": [
     "web/app/themes/pulsar",
-    "web/app/mu-plugins/eighteen73-blocks"
+    "web/app/mu-plugins/nebula-blocks"
   ],
   "scripts": {
     "prepare": "husky install",
@@ -19,13 +19,9 @@
     "format:css": "npm run format:css --workspaces --if-present",
     "format:js": "npm run format:js --workspaces --if-present",
     "format:php": "npm run format:php --workspaces --if-present",
-    "create-block": "npm run create-block -w=eighteen73-blocks"
+    "new:block": "npm run new:block -w=eighteen73-blocks"
   },
-  "author": {
-    "name": "Brett Mason",
-    "email": "brett@eighteen73.co.uk",
-    "role": "developer"
-  },
+  "author": "eighteen73",
   "engineStrict": true,
   "engines": {
     "node": ">=20.0.0",

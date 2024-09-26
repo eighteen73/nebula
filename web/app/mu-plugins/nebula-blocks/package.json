@@ -1,10 +1,9 @@
 {
-	"name": "eighteen73-blocks",
+	"name": "nebula-blocks",
 	"version": "0.1.0",
-	"description": "Custom blocks for an eighteen73 project",
+	"description": "Custom blocks for a Nebula project.",
 	"author": "eighteen73",
 	"license": "GPL-2.0-or-later",
-	"main": "build/index.js",
 	"scripts": {
 		"production": "wp-scripts build --experimental-modules",
 		"format": "wp-scripts format",
@@ -16,7 +15,7 @@
 		"hot": "wp-scripts start --hot --experimental-modules",
 		"format:css": "stylelint --fix './src/**/*.scss'",
 		"format:js": "eslint --fix './src/**/*.js'",
-		"create-block": "npx @wordpress/create-block@latest --template @eighteen73/create-block-template --variant basic --no-plugin"
+		"new:block": "npx @wordpress/create-block@latest --template @eighteen73/create-block-template --variant multi --no-plugin"
 	},
 	"files": [
 		"[^.]*"

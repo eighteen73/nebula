@@ -1,6 +1,6 @@
 {
-	"name": "eighteen73/blocks",
-	"description": "A block scaffolded from eighteen73 standards",
+	"name": "eighteen73/nebula-blocks",
+	"description": "Custom blocks for a Nebula project.",
 	"type": "wordpress-plugin",
 	"require-dev": {
 		"eighteen73/wordpress-coding-standards": "^2.0"
