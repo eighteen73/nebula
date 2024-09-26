@@ -29,4 +29,5 @@ node_modules/
 # dotenv environment variables file
 .env
 
+# Composer vendor directory
 vendor/

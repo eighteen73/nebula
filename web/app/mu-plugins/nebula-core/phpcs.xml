@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ruleset name="Eighteen73">
-	<description>Eighteen73 Core</description>
+	<description>Nebula Core</description>
 
 	<!-- Scan all files in directory -->
 	<file>.</file>

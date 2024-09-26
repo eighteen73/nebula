@@ -18,7 +18,7 @@ class Blocks {
 	 *
 	 * @return void
 	 */
-	public function setup() {
+	public function setup(): void {
 		add_action( 'init', [ $this, 'register' ] );
 	}
 
@@ -31,7 +31,7 @@ class Blocks {
 	 *
 	 * @see https://developer.wordpress.org/reference/functions/register_block_type/
 	 */
-	public function register() {
+	public function register(): void {
 		$blocks_directory = trailingslashit( NEBULA_BLOCKS_PATH . 'build' );
 
 		// Register all the blocks in the plugin.

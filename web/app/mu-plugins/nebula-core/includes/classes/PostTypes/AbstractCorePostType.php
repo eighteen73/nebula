@@ -5,7 +5,7 @@
  * @package Eighteen73Core
  */
 
-namespace Eighteen73\Core\PostTypes;
+namespace Eighteen73\Nebula\Core\PostTypes;
 
 /**
  * Abstract class for core post types.
@@ -23,7 +23,7 @@ abstract class AbstractCorePostType extends AbstractPostType {
 	 *
 	 * @return string
 	 */
-	public function get_singular_label() {
+	public function get_singular_label(): string {
 		return '';
 	}
 
@@ -34,7 +34,7 @@ abstract class AbstractCorePostType extends AbstractPostType {
 	 *
 	 * @return string
 	 */
-	public function get_plural_label() {
+	public function get_plural_label(): string {
 		return '';
 	}
 
@@ -45,7 +45,7 @@ abstract class AbstractCorePostType extends AbstractPostType {
 	 *
 	 * @return string
 	 */
-	public function get_menu_icon() {
+	public function get_menu_icon(): string {
 		return '';
 	}
 
@@ -56,7 +56,7 @@ abstract class AbstractCorePostType extends AbstractPostType {
 	 *
 	 * @return bool
 	 */
-	public function can_register() {
+	public function can_register(): bool {
 		return true;
 	}
 
@@ -64,9 +64,9 @@ abstract class AbstractCorePostType extends AbstractPostType {
 	 * Registers a post type and associates its taxonomies.
 	 *
 	 * @uses $this->get_name() to get the post's type name.
-	 * @return Bool Whether this theme has supports for this post type.
+	 * @return Bool Whether this project has supports for this post type.
 	 */
-	public function register() {
+	public function register(): bool {
 		$this->register_taxonomies();
 		$this->after_register();
 

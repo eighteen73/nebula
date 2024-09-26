@@ -9,13 +9,13 @@
  *
  * @return void
  *
- * @package Eighteen73Core
+ * @package NebulaCore
  */
 
 spl_autoload_register(
 	function ( $class_name ) {
 		$namspaces = [
-			'Eighteen73\\C\\' => __DIR__ . '/includes/classes/',
+			'Eighteen73\\Nebula\\Core\\' => __DIR__ . '/includes/classes/',
 		];
 		foreach ( $namspaces as $prefix => $base_dir ) {
 			$len = strlen( $prefix );

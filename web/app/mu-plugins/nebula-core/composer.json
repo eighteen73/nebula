@@ -1,6 +1,6 @@
 {
-	"name": "eighteen73/core",
-	"description": "Core functionality for an eighteen73 project.",
+	"name": "eighteen73/nebula-core",
+	"description": "Core functionality for a Nebula project.",
 	"type": "wordpress-plugin",
 	"require-dev": {
 		"eighteen73/wordpress-coding-standards": "^2.0"

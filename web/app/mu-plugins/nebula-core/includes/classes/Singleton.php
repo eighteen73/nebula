@@ -2,10 +2,10 @@
 /**
  * Singleton trait
  *
- * @package Eighteen73Core
+ * @package NebulaCore
  */
 
-namespace Eighteen73\Core;
+namespace Eighteen73\Nebula\Core;
 
 trait Singleton {
 

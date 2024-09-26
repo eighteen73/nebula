@@ -2,12 +2,12 @@
 /**
  * AbstractPostType
  *
- * @package Eighteen73Core
+ * @package NebulaCore
  */
 
-namespace Eighteen73\Core\PostTypes;
+namespace Eighteen73\Nebula\Core\PostTypes;
 
-use Eighteen73\Core\Singleton;
+use Eighteen73\Nebula\Core\Singleton;
 
 /**
  * Abstract class for post types.
@@ -16,23 +16,23 @@ use Eighteen73\Core\Singleton;
  *
  *  class Testimonial extends AbstractPostType {
  *
- *      public function get_name() {
+ *      public function get_name(): string {
  *          return 'testimonial';
  *      }
  *
- *      public function get_singular_label() {
+ *      public function get_singular_label(): string {
  *          return 'Testimonial';
  *      }
  *
- *      public function get_plural_label() {
+ *      public function get_plural_label(): string {
  *          return 'Testomonials';
  *      }
  *
- *      public function get_menu_icon() {
+ *      public function get_menu_icon(): string {
  *          return 'embed-post';
  *      }
  *
- *      public function can_register() {
+ *      public function can_register(): bool {
  *          return true;
  *      }
  *  }
@@ -44,21 +44,21 @@ abstract class AbstractPostType extends Singleton {
 	 *
 	 * @return string
 	 */
-	abstract public function get_name();
+	abstract public function get_name(): string;
 
 	/**
 	 * Get the singular post type label.
 	 *
 	 * @return string
 	 */
-	abstract public function get_singular_label();
+	abstract public function get_singular_label(): string;
 
 	/**
 	 * Get the plural post type label.
 	 *
 	 * @return string
 	 */
-	abstract public function get_plural_label();
+	abstract public function get_plural_label(): string;
 
 	/**
 	 * Get the menu icon for the post type.
@@ -69,14 +69,14 @@ abstract class AbstractPostType extends Singleton {
 	 *
 	 * @return string
 	 */
-	abstract public function get_menu_icon();
+	abstract public function get_menu_icon(): string;
 
 	/**
 	 * Get the menu position for the post type.
 	 *
 	 * @return int|null
 	 */
-	public function get_menu_position() {
+	public function get_menu_position(): ?int {
 		return null;
 	}
 
@@ -85,7 +85,7 @@ abstract class AbstractPostType extends Singleton {
 	 *
 	 * @return bool
 	 */
-	public function is_hierarchical() {
+	public function is_hierarchical(): bool {
 		return false;
 	}
 
@@ -94,7 +94,7 @@ abstract class AbstractPostType extends Singleton {
 	 *
 	 * @return array
 	 */
-	public function get_editor_supports() {
+	public function get_editor_supports(): array {
 		$supports = [
 			'title',
 			'editor',
@@ -112,7 +112,7 @@ abstract class AbstractPostType extends Singleton {
 	 *
 	 * @return array
 	 */
-	public function get_options() {
+	public function get_options(): array {
 		return [
 			'labels'            => $this->get_labels(),
 			'public'            => true,
@@ -133,7 +133,7 @@ abstract class AbstractPostType extends Singleton {
 	 *
 	 * @return array
 	 */
-	public function get_labels() {
+	public function get_labels(): array {
 		$plural_label   = $this->get_plural_label();
 		$singular_label = $this->get_singular_label();
 
@@ -143,29 +143,29 @@ abstract class AbstractPostType extends Singleton {
 			// Already translated via get_plural_label().
 			'singular_name'            => $singular_label,
 			// Already translated via get_singular_label().
-			'add_new'                  => sprintf( __( 'Add New %s', 'eighteen73-core' ), $singular_label ),
-			'add_new_item'             => sprintf( __( 'Add New %s', 'eighteen73-core' ), $singular_label ),
-			'edit_item'                => sprintf( __( 'Edit %s', 'eighteen73-core' ), $singular_label ),
-			'new_item'                 => sprintf( __( 'New %s', 'eighteen73-core' ), $singular_label ),
-			'view_item'                => sprintf( __( 'View %s', 'eighteen73-core' ), $singular_label ),
-			'view_items'               => sprintf( __( 'View %s', 'eighteen73-core' ), $plural_label ),
-			'search_items'             => sprintf( __( 'Search %s', 'eighteen73-core' ), $plural_label ),
-			'not_found'                => sprintf( __( 'No %s found.', 'eighteen73-core' ), strtolower( $plural_label ) ),
-			'not_found_in_trash'       => sprintf( __( 'No %s found in Trash.', 'eighteen73-core' ), strtolower( $plural_label ) ),
-			'parent_item_colon'        => sprintf( __( 'Parent %s:', 'eighteen73-core' ), $plural_label ),
-			'all_items'                => sprintf( __( 'All %s', 'eighteen73-core' ), $plural_label ),
-			'archives'                 => sprintf( __( '%s Archives', 'eighteen73-core' ), $singular_label ),
-			'attributes'               => sprintf( __( '%s Attributes', 'eighteen73-core' ), $singular_label ),
-			'insert_into_item'         => sprintf( __( 'Insert into %s', 'eighteen73-core' ), strtolower( $singular_label ) ),
-			'uploaded_to_this_item'    => sprintf( __( 'Uploaded to this %s', 'eighteen73-core' ), strtolower( $singular_label ) ),
-			'filter_items_list'        => sprintf( __( 'Filter %s list', 'eighteen73-core' ), strtolower( $plural_label ) ),
-			'items_list_navigation'    => sprintf( __( '%s list navigation', 'eighteen73-core' ), $plural_label ),
-			'items_list'               => sprintf( __( '%s list', 'eighteen73-core' ), $plural_label ),
-			'item_published'           => sprintf( __( '%s published.', 'eighteen73-core' ), $singular_label ),
-			'item_published_privately' => sprintf( __( '%s published privately.', 'eighteen73-core' ), $singular_label ),
-			'item_reverted_to_draft'   => sprintf( __( '%s reverted to draft.', 'eighteen73-core' ), $singular_label ),
-			'item_scheduled'           => sprintf( __( '%s scheduled.', 'eighteen73-core' ), $singular_label ),
-			'item_updated'             => sprintf( __( '%s updated.', 'eighteen73-core' ), $singular_label ),
+			'add_new'                  => sprintf( __( 'Add New %s', 'nebula-core' ), $singular_label ),
+			'add_new_item'             => sprintf( __( 'Add New %s', 'nebula-core' ), $singular_label ),
+			'edit_item'                => sprintf( __( 'Edit %s', 'nebula-core' ), $singular_label ),
+			'new_item'                 => sprintf( __( 'New %s', 'nebula-core' ), $singular_label ),
+			'view_item'                => sprintf( __( 'View %s', 'nebula-core' ), $singular_label ),
+			'view_items'               => sprintf( __( 'View %s', 'nebula-core' ), $plural_label ),
+			'search_items'             => sprintf( __( 'Search %s', 'nebula-core' ), $plural_label ),
+			'not_found'                => sprintf( __( 'No %s found.', 'nebula-core' ), strtolower( $plural_label ) ),
+			'not_found_in_trash'       => sprintf( __( 'No %s found in Trash.', 'nebula-core' ), strtolower( $plural_label ) ),
+			'parent_item_colon'        => sprintf( __( 'Parent %s:', 'nebula-core' ), $plural_label ),
+			'all_items'                => sprintf( __( 'All %s', 'nebula-core' ), $plural_label ),
+			'archives'                 => sprintf( __( '%s Archives', 'nebula-core' ), $singular_label ),
+			'attributes'               => sprintf( __( '%s Attributes', 'nebula-core' ), $singular_label ),
+			'insert_into_item'         => sprintf( __( 'Insert into %s', 'nebula-core' ), strtolower( $singular_label ) ),
+			'uploaded_to_this_item'    => sprintf( __( 'Uploaded to this %s', 'nebula-core' ), strtolower( $singular_label ) ),
+			'filter_items_list'        => sprintf( __( 'Filter %s list', 'nebula-core' ), strtolower( $plural_label ) ),
+			'items_list_navigation'    => sprintf( __( '%s list navigation', 'nebula-core' ), $plural_label ),
+			'items_list'               => sprintf( __( '%s list', 'nebula-core' ), $plural_label ),
+			'item_published'           => sprintf( __( '%s published.', 'nebula-core' ), $singular_label ),
+			'item_published_privately' => sprintf( __( '%s published privately.', 'nebula-core' ), $singular_label ),
+			'item_reverted_to_draft'   => sprintf( __( '%s reverted to draft.', 'nebula-core' ), $singular_label ),
+			'item_scheduled'           => sprintf( __( '%s scheduled.', 'nebula-core' ), $singular_label ),
+			'item_updated'             => sprintf( __( '%s updated.', 'nebula-core' ), $singular_label ),
 			'menu_name'                => $plural_label,
 			'name_admin_bar'           => $singular_label,
 		];
@@ -178,9 +178,9 @@ abstract class AbstractPostType extends Singleton {
 	 * Registers a post type and associates its taxonomies.
 	 *
 	 * @uses $this->get_name() to get the post's type name.
-	 * @return Bool Whether this theme has supports for this post type.
+	 * @return Bool Whether this project has supports for this post type.
 	 */
-	public function register() {
+	public function register(): bool {
 		$this->register_post_type();
 		$this->register_taxonomies();
 
@@ -194,7 +194,7 @@ abstract class AbstractPostType extends Singleton {
 	 *
 	 * @return void
 	 */
-	public function register_post_type() {
+	public function register_post_type(): void {
 		register_post_type(
 			$this->get_name(),
 			$this->get_options()
@@ -206,7 +206,7 @@ abstract class AbstractPostType extends Singleton {
 	 *
 	 * @return void
 	 */
-	public function register_taxonomies() {
+	public function register_taxonomies(): void {
 		$taxonomies = $this->get_supported_taxonomies();
 
 		$object_type = $this->get_name();
@@ -227,7 +227,7 @@ abstract class AbstractPostType extends Singleton {
 	 *
 	 * @return array
 	 */
-	public function get_supported_taxonomies() {
+	public function get_supported_taxonomies(): array {
 		return [];
 	}
 
@@ -236,7 +236,7 @@ abstract class AbstractPostType extends Singleton {
 	 *
 	 * @return void
 	 */
-	public function after_register() {
+	public function after_register(): void {
 		// Do nothing.
 	}
 }
