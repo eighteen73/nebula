@@ -9,13 +9,13 @@
  *
  * @return void
  *
- * @package NebulaBlocks
+ * @package NebulaCore
  */
 
 spl_autoload_register(
 	function ( $class_name ) {
 		$namspaces = [
-			'Eighteen73\\Nebula\\Blocks\\' => __DIR__ . '/includes/classes/',
+			'Eighteen73\\Nebula\\Core\\' => __DIR__ . '/classes/',
 		];
 		foreach ( $namspaces as $prefix => $base_dir ) {
 			$len = strlen( $prefix );

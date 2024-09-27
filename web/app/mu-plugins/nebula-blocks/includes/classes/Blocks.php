@@ -7,19 +7,28 @@
 
 namespace Eighteen73\Nebula\Blocks;
 
+use Eighteen73\Nebula\Blocks\Contracts\Bootable;
+
 /**
  * Handles block registration.
  */
-class Blocks {
-	use Singleton;
-
+class Blocks implements Bootable {
 	/**
 	 * Run on init
 	 *
 	 * @return void
 	 */
-	public function setup(): void {
+	public function boot(): void {
 		add_action( 'init', [ $this, 'register' ] );
+	}
+
+	/**
+	 * Determines if the class can be booted.
+	 *
+	 * @return bool
+	 */
+	public function can_boot(): bool {
+		return true;
 	}
 
 	/**

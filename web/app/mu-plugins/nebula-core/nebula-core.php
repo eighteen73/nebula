@@ -24,4 +24,5 @@ define( 'NEBULA_CORE_URL', plugin_dir_url( __FILE__ ) );
 define( 'NEBULA_CORE_PATH', plugin_dir_path( __FILE__ ) );
 
 // Require the autoloader.
-require_once 'autoload.php';
+require_once NEBULA_CORE_PATH . 'includes/autoload.php';
+require_once NEBULA_CORE_PATH . 'includes/plugin.php';

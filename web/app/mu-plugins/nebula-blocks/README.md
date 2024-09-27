@@ -1,9 +1,3 @@
-# Eighteen73 Block
+# Nebula Blocks
 
-<p>
-  <strong>A block scaffolded from eighteen73 standards</strong>
-</p>
-
-## Dependancies
-
-## Usage
+All project specific custom blocks should live here.

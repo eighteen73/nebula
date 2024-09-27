@@ -1,0 +1,10 @@
+<?php
+/**
+ * Bindings are all of the classes from includes/classes that
+ * need to be registered in the plugin. This is typically anything
+ * that uses the Bootable interface.
+ *
+ * @package NebulaCore
+ */
+
+return [];

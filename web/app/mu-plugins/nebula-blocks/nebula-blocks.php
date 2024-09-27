@@ -23,8 +23,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'NEBULA_BLOCKS_URL', plugin_dir_url( __FILE__ ) );
 define( 'NEBULA_BLOCKS_PATH', plugin_dir_path( __FILE__ ) );
 
-// Require the autoloader.
-require_once 'autoload.php';
-
-// Initialise classes.
-Blocks::instance()->setup();
+// Require the plugin files.
+require_once NEBULA_BLOCKS_PATH . 'includes/autoload.php';
+require_once NEBULA_BLOCKS_PATH . 'includes/plugin.php';
