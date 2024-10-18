@@ -53,38 +53,27 @@ use function register_extended_post_type;
  * @return PostType
  */
 abstract class PostType implements Bootable {
+
 	/**
 	 * Post type name.
 	 *
 	 * @var string
 	 */
-	protected $post_type;
+	protected string $post_type;
 
 	/**
-	 * Post type arguments.
-	 *
-	 * @var array
-	 */
-	protected $args = [];
-
-	/**
-	 * Post type names.
-	 *
-	 * @var array
-	 */
-	protected $names = [];
-
-	/**
-	 * Boots the class by running `add_action()` and `add_filter()` calls.
+	 * Boot method from Bootable interface
 	 *
 	 * @return void
 	 */
 	public function boot(): void {
-		add_action( 'init', [ $this, 'register' ] );
+		add_action( 'init', [ $this, 'register_post_type' ] );
+		add_action( 'init', [ $this, 'register_post_type_meta' ] );
+		add_action( 'rest_api_init', [ $this, 'register_post_type_rest_routes' ] );
 	}
 
 	/**
-	 * Determines if the class can be booted.
+	 * Post types can be booted by default.
 	 *
 	 * @return bool
 	 */
@@ -93,30 +82,113 @@ abstract class PostType implements Bootable {
 	}
 
 	/**
-	 * Validate the post type name format.
+	 * Get post type name.
 	 *
-	 * @param string $post_type The post type name.
-	 * @return void
-	 * @throws Exception If the taxonomy name is invalid.
+	 * @return string
 	 */
-	protected function validate( string $post_type ): void {
-		if ( ! preg_match( '/^[a-z_]+$/', $post_type ) ) {
-			throw new Exception( 'Invalid post type name: ' . esc_html( $post_type ) . '. Must be lowercase, contain no spaces or hyphens, and underscores between words.' );
+	abstract public function get_name(): string;
+
+	/**
+	 * Get post type singular label.
+	 *
+	 * @return string
+	 */
+	abstract public function get_singular_label(): string;
+
+	/**
+	 * Get post type plural label.
+	 *
+	 * @return string
+	 */
+	abstract public function get_plural_label(): string;
+
+	/**
+	 * Get post type menu icon.
+	 *
+	 * @return string
+	 */
+	abstract public function get_menu_icon(): string;
+
+	/**
+	 * Editor supports.
+	 *
+	 * @return array
+	 */
+	abstract public function get_editor_supports(): array;
+
+	/**
+	 * Post type options configuration.
+	 *
+	 * @return array
+	 */
+	protected function get_options(): array {
+		return [
+			'menu_icon'    => $this->get_menu_icon(),
+			'supports'     => $this->get_editor_supports(),
+			'show_in_rest' => true,
+			'public'       => true,
+		];
+	}
+
+	/**
+	 * Post type labels configuration.
+	 *
+	 * @return array
+	 */
+	protected function get_labels(): array {
+		return [
+			'singular' => $this->get_singular_label(),
+			'plural'   => $this->get_plural_label(),
+			'slug'     => $this->get_name(),
+		];
+	}
+
+	/**
+	 * Register post type using Extended CPTs.
+	 */
+	public function register_post_type(): void {
+		register_extended_post_type(
+			$this->get_name(),
+			$this->get_options(),
+			$this->get_labels()
+		);
+	}
+
+	/**
+	 * Automatically register meta fields from child class.
+	 */
+	public function register_post_type_meta(): void {
+		foreach ( $this->get_custom_post_meta() as $meta_key => $meta_args ) {
+			register_post_meta( $this->get_name(), $meta_key, $meta_args );
 		}
 	}
 
 	/**
-	 * Register the post type.
+	 * Register REST routes.
 	 *
 	 * @return void
 	 */
-	public function register(): void {
-		$this->validate( $this->post_type );
+	public function register_post_type_rest_routes(): void {
+		foreach ( $this->get_custom_rest_routes() as $route ) {
+			register_rest_route( $route['namespace'], $route['route'], $route['args'] );
+		}
+	}
 
-		register_extended_post_type(
-			$this->post_type,
-			$this->args,
-			$this->names
-		);
+	/**
+	 * Get custom post meta.
+	 *
+	 * @return array
+	 */
+	public function get_custom_post_meta(): array {
+		return [];
+	}
+
+	/**
+	 * Child class can override this to provide REST route definitions.
+	 *
+	 * @return array
+	 */
+	public function get_custom_rest_routes(): array {
+		return [];
 	}
 }
