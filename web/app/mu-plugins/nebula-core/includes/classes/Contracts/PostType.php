@@ -68,8 +68,8 @@ abstract class PostType implements Bootable {
 	 */
 	public function boot(): void {
 		add_action( 'init', [ $this, 'register_post_type' ] );
-		add_action( 'init', [ $this, 'register_post_type_meta' ] );
-		add_action( 'rest_api_init', [ $this, 'register_post_type_rest_routes' ] );
+		add_action( 'init', [ $this, 'register_meta' ] );
+		add_action( 'rest_api_init', [ $this, 'register_rest_routes' ] );
 	}
 
 	/**
@@ -144,9 +144,31 @@ abstract class PostType implements Bootable {
 	}
 
 	/**
+	 * Get custom post meta.
+	 *
+	 * Child classes should return an associative array where the key is the meta key and the value is an array of arguments for that meta key.
+	 *
+	 * @return array
+	 */
+	public function get_meta(): array {
+		return [];
+	}
+
+	/**
+	 * Child class can override this to provide REST route definitions.
+	 *
+	 * @return array
+	 */
+	public function get_rest_routes(): array {
+		return [];
+	}
+
+	/**
 	 * Register post type using Extended CPTs.
 	 */
 	public function register_post_type(): void {
+		$this->validate( $this->get_name() );
+
 		register_extended_post_type(
 			$this->get_name(),
 			$this->get_options(),
@@ -157,9 +179,10 @@ abstract class PostType implements Bootable {
 	/**
 	 * Automatically register meta fields from child class.
 	 */
-	public function register_post_type_meta(): void {
-		foreach ( $this->get_custom_post_meta() as $meta_key => $meta_args ) {
-			register_post_meta( $this->get_name(), $meta_key, $meta_args );
+	public function register_meta(): void {
+		foreach ( $this->get_meta() as $meta_key => $meta_args ) {
+			$final_key = $this->should_prefix_meta_keys() ? "{$this->get_name()}_$meta_key" : $meta_key;
+			register_post_meta( $this->get_name(), $final_key, $meta_args );
 		}
 	}
 
@@ -168,27 +191,33 @@ abstract class PostType implements Bootable {
 	 *
 	 * @return void
 	 */
-	public function register_post_type_rest_routes(): void {
-		foreach ( $this->get_custom_rest_routes() as $route ) {
+	public function register_rest_routes(): void {
+		foreach ( $this->get_rest_routes() as $route ) {
 			register_rest_route( $route['namespace'], $route['route'], $route['args'] );
 		}
 	}
 
 	/**
-	 * Get custom post meta.
+	 * Validate the post type name format.
 	 *
-	 * @return array
+	 * @param string $post_type The post type name.
+	 * @return void
+	 * @throws Exception If the post type name is invalid.
 	 */
-	public function get_custom_post_meta(): array {
-		return [];
+	protected function validate( string $post_type ): void {
+		if ( ! preg_match( '/^[a-z_]+$/', $post_type ) ) {
+			throw new Exception( 'Invalid post type name: ' . esc_html( $this->get_name() ) . '. Post type name should be lowercase, contain no spaces or hyphens, and only include underscores between words.' );
+		}
 	}
 
 	/**
-	 * Child class can override this to provide REST route definitions.
+	 * Should meta keys be prefixed with post type name.
+	 * This is useful to avoid conflicts with other post types  and is good practice.
+	 * Child classes can override this method to disable prefixing.
 	 *
-	 * @return array
+	 * @return bool
 	 */
-	public function get_custom_rest_routes(): array {
-		return [];
+	protected function should_prefix_meta_keys(): bool {
+		return true;
 	}
 }
