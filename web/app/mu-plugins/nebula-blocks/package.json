@@ -5,17 +5,16 @@
 	"author": "eighteen73",
 	"license": "GPL-2.0-or-later",
 	"scripts": {
-		"production": "wp-scripts build --experimental-modules",
-		"format": "wp-scripts format",
+		"start": "wp-scripts start --experimental-modules",
+		"build": "wp-scripts build --experimental-modules",
+		"format": "npm run format:css && npm run format:js",
+		"lint": "npm run lint:css && npm run lint:js",
 		"lint:css": "stylelint './src/**/*.scss'",
 		"lint:js": "eslint './src/**/*.js'",
-		"packages-update": "wp-scripts packages-update",
-		"plugin-zip": "wp-scripts plugin-zip",
-		"watch": "wp-scripts start --experimental-modules",
-		"hot": "wp-scripts start --hot --experimental-modules",
 		"format:css": "stylelint --fix './src/**/*.scss'",
 		"format:js": "eslint --fix './src/**/*.js'",
-		"new:block": "npx @wordpress/create-block@latest --template @eighteen73/create-block-template --variant multi --no-plugin"
+		"packages-update": "wp-scripts packages-update",
+		"create-block": "npx @wordpress/create-block@latest --template @eighteen73/create-block-template --no-plugin"
 	},
 	"files": [
 		"[^.]*"
