@@ -7,7 +7,7 @@
 
 namespace Eighteen73\Nebula\Blocks;
 
-use Eighteen73\Nebula\Blocks\Tools\Config;
+use Eighteen73\Nebula\Core\Tools\Config;
 
 /**
  * Mini container.  This allows us to set up single instances of our objects

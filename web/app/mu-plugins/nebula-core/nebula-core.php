@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Nebula core
  * Description:       Core functionality for a Nebula project.
- * Version:           0.1.0
+ * Version:           1.0.0
  * Requires at least: 6.6
  * Requires PHP:      8.2
  * Author:            eighteen73

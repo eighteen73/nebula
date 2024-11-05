@@ -7,7 +7,7 @@
 
 namespace Eighteen73\Nebula\Blocks;
 
-use Eighteen73\Nebula\Blocks\Contracts\Bootable;
+use Eighteen73\Nebula\Core\Contracts\Bootable;
 
 /**
  * Handles block registration.
