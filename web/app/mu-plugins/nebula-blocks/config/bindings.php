@@ -7,4 +7,6 @@
  * @package NebulaCore
  */
 
-return [];
+return [
+	Eighteen73\Nebula\Blocks\Blocks::class,
+];
