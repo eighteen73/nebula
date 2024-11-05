@@ -19,28 +19,27 @@ class Config {
 	 * an array.
 	 *
 	 * @param  string $name The name of the config file.
+	 * @param  string $base_path The base file path.
 	 * @return array
 	 */
-	public static function get( string $name ): array {
+	public static function get( string $name, string $base_path ): array {
 
-		$file = static::path( "{$name}.php" );
+		$file = static::path( $base_path, "{$name}.php" );
 
-		return (array) apply_filters(
-			"nebula/core/config/{$name}/",
-			file_exists( $file ) ? include $file : []
-		);
+		return (array) file_exists( $file ) ? include $file : [];
 	}
 
 	/**
 	 * Returns the config path or file path if set.
 	 *
+	 * @param  string $base_path The base file path.
 	 * @param  string $file The file name.
 	 * @return string
 	 */
-	public static function path( string $file = '' ): string {
+	public static function path( string $base_path, string $file = '' ): string {
 
 		$file = trim( $file, '/' );
 
-		return NEBULA_CORE_PATH . ( $file ? "config/{$file}" : 'config' );
+		return $base_path . ( $file ? "/config/{$file}" : 'config' );
 	}
 }

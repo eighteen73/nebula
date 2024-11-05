@@ -2,7 +2,7 @@
 /**
  * Bootstrap all of the plugin classes.
  *
- * @package Pulsar
+ * @package NebulaCore
  */
 
 namespace Eighteen73\Nebula\Core;
@@ -25,7 +25,7 @@ function plugin( string $abstract = '' ): mixed {
 
 	// On first run, create new components and boot them.
 	if ( is_null( $classes ) ) {
-		$bindings = Config::get( 'bindings' );
+		$bindings = Config::get( 'bindings', NEBULA_CORE_PATH );
 
 		foreach ( $bindings as $binding ) {
 			$classes[ $binding ] = new $binding();
