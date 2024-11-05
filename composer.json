@@ -6,11 +6,11 @@
   "authors": [
     {
       "name": "Ed Jeavons",
-      "email": "ed@orphans.co.uk"
+      "email": "ed@eighteen73.co.uk"
     },
     {
       "name": "Brett Mason",
-      "email": "brett@orphans.co.uk"
+      "email": "brett@eighteen73.co.uk"
     }
   ],
   "keywords": [
@@ -26,6 +26,12 @@
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "Eighteen73\\Nebula\\Core\\": "web/app/mu-plugins/nebula-core/includes/classes",
+      "Eighteen73\\Nebula\\Blocks\\": "web/app/mu-plugins/nebula-blocks/includes/classes"
+    }
+  },
   "require": {
     "php": ">=8.2",
     "composer/installers": "^2.2.0",

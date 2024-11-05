@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Nebuloa Blocks
+ * Plugin Name:       Nebula Blocks
  * Description:       Custom blocks for a Nebula project.
  * Version:           1.0.0
  * Requires at least: 6.6
@@ -23,6 +23,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'NEBULA_BLOCKS_URL', plugin_dir_url( __FILE__ ) );
 define( 'NEBULA_BLOCKS_PATH', plugin_dir_path( __FILE__ ) );
 
-// Require the plugin files.
-require_once NEBULA_BLOCKS_PATH . 'includes/autoload.php';
+// Initialise the plugin.
 require_once NEBULA_BLOCKS_PATH . 'includes/plugin.php';
