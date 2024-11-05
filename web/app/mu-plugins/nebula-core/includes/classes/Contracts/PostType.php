@@ -1,6 +1,6 @@
 <?php
 /**
- * PostType
+ * PostType contract.
  *
  * @package NebulaCore
  */
@@ -11,55 +11,11 @@ use Exception;
 use function register_extended_post_type;
 
 /**
- * Abstract class for post types.
- *
- * The `$args` parameter accepts all the standard arguments for `register_post_type()` in addition to several custom
- * arguments that provide extended functionality. Some of the default arguments differ from the defaults in
- * `register_post_type()`.
- *
- * @link https://github.com/johnbillion/extended-cpts/wiki/Registering-Post-Types
- * @see register_post_type() for default arguments.
- *
- * @param string   $post_type The post type name.
- * @param mixed[]  $args {
- *     Optional. The post type arguments.
- *
- *     @type array  $admin_cols         Associative array of admin screen columns to show for this post type.
- *     @type array  $admin_filters      Associative array of admin screen filters to show for this post type.
- *     @type array  $archive            Associative array of query vars to override on this post type's archive.
- *     @type bool   $block_editor       Force the use of the block editor for this post type. Must be used in
- *                                      combination with the `show_in_rest` argument. The primary use of this argument
- *                                      is to prevent the block editor from being used by setting it to false when
- *                                      `show_in_rest` is set to true.
- *     @type bool   $dashboard_glance   Whether to show this post type on the 'At a Glance' section of the admin
- *                                      dashboard. Default true.
- *     @type bool   $dashboard_activity Whether to show this post type on the 'Recently Published' section of the
- *                                      admin dashboard. Default true.
- *     @type string $enter_title_here   Placeholder text which appears in the title field for this post type.
- *     @type string $featured_image     Text which replaces the 'Featured Image' phrase for this post type.
- *     @type bool   $quick_edit         Whether to show Quick Edit links for this post type. Default true.
- *     @type bool   $show_in_feed       Whether to include this post type in the site's main feed. Default false.
- *     @type array  $site_filters       Associative array of query vars and their parameters for front end filtering.
- *     @type array  $site_sortables     Associative array of query vars and their parameters for front end sorting.
- * }
- * @param string[] $names {
- *     Optional. The plural, singular, and slug names.
- *
- *     @type string $plural   The plural form of the post type name.
- *     @type string $singular The singular form of the post type name.
- *     @type string $slug     The slug used in the permalinks for this post type.
- * }
+ * Abstract class for post type registration.
  *
  * @return PostType
  */
 abstract class PostType implements Bootable {
-
-	/**
-	 * Post type name.
-	 *
-	 * @var string
-	 */
-	protected string $post_type;
 
 	/**
 	 * Boot method from Bootable interface
@@ -89,32 +45,29 @@ abstract class PostType implements Bootable {
 	abstract public function get_name(): string;
 
 	/**
-	 * Get post type singular label.
-	 *
-	 * @return string
-	 */
-	abstract public function get_singular_label(): string;
-
-	/**
-	 * Get post type plural label.
-	 *
-	 * @return string
-	 */
-	abstract public function get_plural_label(): string;
-
-	/**
 	 * Get post type menu icon.
 	 *
 	 * @return string
 	 */
-	abstract public function get_menu_icon(): string;
+	public function get_menu_icon(): string {
+		return 'dashicons-admin-post';
+	}
 
 	/**
 	 * Editor supports.
 	 *
 	 * @return array
 	 */
-	abstract public function get_editor_supports(): array;
+	public function get_editor_supports(): array {
+		return [
+			'title',
+			'editor',
+			'excerpt',
+			'thumbnail',
+			'custom-fields',
+			'page-attributes',
+		];
+	}
 
 	/**
 	 * Post type options configuration.
@@ -133,14 +86,16 @@ abstract class PostType implements Bootable {
 	/**
 	 * Post type labels configuration.
 	 *
+	 * @example [
+	 * 'singular' => 'Post',
+	 * 'plural'   => 'Posts',
+	 * 'slug'     => 'post',
+	 * ]
+	 *
 	 * @return array
 	 */
 	protected function get_labels(): array {
-		return [
-			'singular' => $this->get_singular_label(),
-			'plural'   => $this->get_plural_label(),
-			'slug'     => $this->get_name(),
-		];
+		return [];
 	}
 
 	/**
@@ -165,6 +120,8 @@ abstract class PostType implements Bootable {
 
 	/**
 	 * Register post type using Extended CPTs.
+	 *
+	 * @return void
 	 */
 	public function register_post_type(): void {
 		$this->validate( $this->get_name() );
