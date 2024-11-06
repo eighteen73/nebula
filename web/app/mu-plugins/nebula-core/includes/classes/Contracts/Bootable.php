@@ -8,7 +8,7 @@
  * the class constructor. Most bootable classes are meant to be single-instance
  * classes that get loaded once per page request.
  *
- * @package Pulsar
+ * @package NebulaCore
  */
 
 namespace Eighteen73\Nebula\Core\Contracts;

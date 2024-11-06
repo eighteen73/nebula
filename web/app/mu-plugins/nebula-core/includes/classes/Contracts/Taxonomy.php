@@ -44,11 +44,11 @@ abstract class Taxonomy implements Bootable {
 	abstract public function get_name(): string;
 
 	/**
-	 * Get post type.
+	 * Get post types this taxonomy should be registered for.
 	 *
-	 * @return string
+	 * @return string|array
 	 */
-	abstract public function get_post_type(): string;
+	abstract public function get_post_types(): string|array;
 
 	/**
 	 * Taxonomy options configuration.
@@ -95,7 +95,7 @@ abstract class Taxonomy implements Bootable {
 
 		register_extended_taxonomy(
 			$this->get_name(),
-			$this->get_post_type(),
+			$this->get_post_types(),
 			$this->get_options(),
 			$this->get_labels(),
 		);
