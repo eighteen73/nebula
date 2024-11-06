@@ -17,6 +17,7 @@ Config::define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true );
 Config::define( 'SCRIPT_DEBUG', true );
 Config::define( 'DISALLOW_INDEXING', true );
 Config::define( 'WP_CACHE', false );
+Config::define( 'WP_DEVELOPMENT_MODE', 'all' );
 
 ini_set( 'display_errors', '1' ); // PHPCS:ignore:WordPress.PHP.IniSet.display_errors_Disallowed
 
