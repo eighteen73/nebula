@@ -1,44 +1,60 @@
 {
-  "name": "eighteen73-nebula",
-  "version": "1.0.0",
-  "workspaces": [
-    "web/app/themes/pulsar",
-    "web/app/mu-plugins/nebula-blocks"
-  ],
-  "scripts": {
-    "prepare": "husky install",
+	"name": "eighteen73-nebula",
+	"version": "1.0.0",
+	"description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
+	"workspaces": [
+		"web/app/themes/pulsar",
+		"web/app/mu-plugins/nebula-blocks"
+	],
+	"author": "eighteen73",
+	"engineStrict": true,
+	"license": "MIT",
+  "keywords": [
+		"nebula",
+		"composer",
+		"eighteen73",
+		"wordpress"
+	],
+	"homepage": "https://github.com/eighteen73/nebula",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/eighteen73/nebula.git"
+	},
+	"bugs": {
+		"url": "https://github.com/eighteen73/nebula/issues"
+	},
+	"engines": {
+		"node": ">=20.0.0",
+		"npm": ">=10.0.0"
+	},
+	"devDependencies": {
+		"husky": "^9.1.0",
+		"lint-staged": "^15.2.0",
+		"npm-run-all": "^4.1.5"
+	},
+	"scripts": {
+		"prepare": "husky install",
 		"start": "run-p start:theme start:blocks",
-    "start:theme": "npm run start -w=pulsar",
-    "start:blocks": "npm run start -w=nebula-blocks",
-    "build": "npm run build --workspaces --if-present",
-    "watch": "npm run start",
-    "production": "npm run build",
+		"start:theme": "npm run start -w=pulsar",
+		"start:blocks": "npm run start -w=nebula-blocks",
+		"build": "npm run build --workspaces --if-present",
+		"watch": "npm run start",
+		"production": "npm run build",
 		"format": "npm run format --workspaces --if-present",
-    "format:css": "npm run format:css --workspaces --if-present",
-    "format:js": "npm run format:js --workspaces --if-present",
-    "format:php": "npm run format:php --workspaces --if-present",
-    "lint": "npm run lint --workspaces --if-present",
+		"format:css": "npm run format:css --workspaces --if-present",
+		"format:js": "npm run format:js --workspaces --if-present",
+		"format:php": "npm run format:php --workspaces --if-present",
+		"lint": "npm run lint --workspaces --if-present",
 		"lint:css": "wp-scripts lint-style --workspaces --if-present",
 		"lint:js": "wp-scripts lint-js --workspaces --if-present",
-    "lint:php": "npm run lint:php --workspaces --if-present",
-    "lint:md:docs": "npm run lint-md-docs --workspaces --if-present",
-		"lint:pkg-json": "npm run lint-pkg-json --workspaces --if-present",
+		"lint:php": "npm run lint:php --workspaces --if-present",
+		"lint:md:docs": "npm run lint-md-docs --workspaces --if-present",
+		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "npm run packages-update --workspaces --if-present",
-    "check-engines": "npm run check-engines --workspaces --if-present",
+		"check-engines": "npm run check-engines --workspaces --if-present",
 		"check-licenses": "npm run check-licenses --workspaces --if-present",
-    "create-block": "npm run create-block -w=nebula-blocks",
-    "create-post-type": "npm run create-post-type -w=nebula-core",
-    "create-taxonomy": "npm run create-taxonomy -w=nebula-core"
-  },
-  "author": "eighteen73",
-  "engineStrict": true,
-  "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=10.0.0"
-  },
-  "devDependencies": {
-    "husky": "^9.1.0",
-    "lint-staged": "^15.2.0",
-    "npm-run-all": "^4.1.5"
-  }
+		"create-block": "npm run create-block -w=nebula-blocks",
+		"create-post-type": "npm run create-post-type -w=nebula-core",
+		"create-taxonomy": "npm run create-taxonomy -w=nebula-core"
+	}
 }
