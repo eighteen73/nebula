@@ -12,6 +12,9 @@ web/app/uploads/*
 web/wp
 web/.htaccess
 
+# Themes
+web/app/themes/twentytwentyfour
+
 # Logs
 *.log
 
@@ -37,6 +40,4 @@ wp-cli.local.yml
 # Caching and performance
 web/app/cache
 web/app/advanced-cache.php
-web/app/wp-rocket-config
-web/app/webp-express
-web/app/themes/twentytwentytwo
+web/app/object-cache.php

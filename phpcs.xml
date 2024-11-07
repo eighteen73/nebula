@@ -10,8 +10,9 @@
 
 	<!-- Ignore WordPress and Composer dependencies -->
 	<exclude-pattern>/web/wp</exclude-pattern>
-	<exclude-pattern>/web/app/themes/twentytwentytwo</exclude-pattern>
+	<exclude-pattern>/web/app/themes/twentytwentyfour</exclude-pattern>
 	<exclude-pattern>/vendor</exclude-pattern>
+	<exclude-pattern>build</exclude-pattern>
 
 	<!-- Show colors in console -->
 	<arg value="-colors"/>
