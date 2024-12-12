@@ -37,7 +37,7 @@
     "wpackagist-theme/twentytwentyfour": "^1.0"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.8.0",
+    "squizlabs/php_codesniffer": "^3.11.2",
     "roave/security-advisories": "dev-latest",
     "eighteen73/satellite": "^1.1",
     "eighteen73/wordpress-coding-standards": "^2.0"
