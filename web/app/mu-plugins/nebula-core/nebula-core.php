@@ -16,7 +16,7 @@
 namespace Eighteen73\Nebula\Core;
 
 if ( ! defined( 'ABSPATH' ) ) {
-exit; // Exit if accessed directly.
+	exit; // Exit if accessed directly.
 }
 
 // Useful global constants.

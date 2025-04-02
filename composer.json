@@ -72,8 +72,7 @@
     "post-create-project-cmd": [
       "Eighteen73\\NebulaTools\\ComposerScripts\\PostCreateProject::run"
     ],
-    "test": [
-      "phpcs"
-    ]
+    "lint": "./vendor/bin/phpcs --standard=./phpcs.xml",
+    "format": "./vendor/bin/phpcbf --standard=./phpcs.xml"
   }
 }
