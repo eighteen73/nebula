@@ -56,7 +56,16 @@ abstract class Taxonomy implements Bootable {
 	 * @return array
 	 */
 	protected function get_options(): array {
-		return [];
+		return [
+			'public'            => true,
+			'show_ui'           => true,
+			'hierarchical'      => true,
+			'query_var'         => true,
+			'allow_hierarchy'   => false,
+			'dashboard_glance'  => false,
+			'meta_box'          => 'simple',
+			'show_in_rest'      => true,
+		];
 	}
 
 	/**
@@ -99,7 +108,16 @@ abstract class Taxonomy implements Bootable {
 			$this->get_options(),
 			$this->get_labels(),
 		);
+
+		$this->after_register();
 	}
+
+	/**
+	 * Run any code after the taxonomy has been registered.
+	 *
+	 * @return void
+	 */
+	public function after_register() {}
 
 	/**
 	 * Automatically register meta fields from child class.

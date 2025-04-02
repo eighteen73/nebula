@@ -26,6 +26,7 @@ abstract class PostType implements Bootable {
 		add_action( 'init', [ $this, 'register_post_type' ] );
 		add_action( 'init', [ $this, 'register_meta' ] );
 		add_action( 'rest_api_init', [ $this, 'register_rest_routes' ] );
+		add_filter( 'is_post_type_viewable', [ $this, 'is_post_type_viewable' ], 10, 2 );
 	}
 
 	/**
@@ -99,6 +100,17 @@ abstract class PostType implements Bootable {
 	}
 
 	/**
+	 * Get single post visibility.
+	 *
+	 * Child classes should return bool.
+	 *
+	 * @return bool
+	 */
+	public function get_visibility(): bool {
+		return true;
+	}
+
+	/**
 	 * Get custom post meta.
 	 *
 	 * Child classes should return an associative array where the key is the meta key and the value is an array of arguments for that meta key.
@@ -131,7 +143,16 @@ abstract class PostType implements Bootable {
 			$this->get_options(),
 			$this->get_labels()
 		);
+
+		$this->after_register();
 	}
+
+	/**
+	 * Run any code after the post type has been registered.
+	 *
+	 * @return void
+	 */
+	public function after_register(): void {}
 
 	/**
 	 * Automatically register meta fields from child class.
@@ -176,5 +197,20 @@ abstract class PostType implements Bootable {
 	 */
 	protected function should_prefix_meta_keys(): bool {
 		return true;
+	}
+
+	/**
+	 * Filter the viewability of the post type.
+	 *
+	 * @param bool                 $is_viewable Whether the post type is viewable.
+	 * @param string|\WP_Post_Type $post_type The post type.
+	 * @return bool
+	 */
+	public function is_post_type_viewable( bool $is_viewable, string|\WP_Post_Type $post_type ): bool {
+		if ( $post_type === $this->get_name() ) {
+			return $this->get_visibility();
+		}
+
+		return $is_viewable;
 	}
 }

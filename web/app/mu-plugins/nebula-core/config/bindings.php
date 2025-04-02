@@ -7,4 +7,7 @@
  * @package NebulaCore
  */
 
-return [];
+return [
+	// Eighteen73\Nebula\Core\PostTypes\ExamplePostType::class,
+	// Eighteen73\Nebula\Core\Taxonomies\ExampleTaxonomy::class,
+];
