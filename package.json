@@ -4,7 +4,8 @@
 	"description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
 	"workspaces": [
 		"web/app/themes/pulsar",
-		"web/app/mu-plugins/nebula-blocks"
+		"web/app/mu-plugins/nebula-blocks",
+		"web/app/mu-plugins/nebula-core"
 	],
 	"author": "eighteen73",
 	"engineStrict": true,
@@ -53,8 +54,8 @@
 		"packages-update": "npm run packages-update --workspaces --if-present",
 		"check-engines": "npm run check-engines --workspaces --if-present",
 		"check-licenses": "npm run check-licenses --workspaces --if-present",
-		"create-block": "npm run create-block -w=nebula-blocks",
-		"create-post-type": "npm run create-post-type -w=nebula-core",
-		"create-taxonomy": "npm run create-taxonomy -w=nebula-core"
+		"create:block": "npm run create:block -w=nebula-blocks",
+		"create:post-type": "npm run create:post-type -w=nebula-core",
+		"create:taxonomy": "npm run create:taxonomy -w=nebula-core"
 	}
 }

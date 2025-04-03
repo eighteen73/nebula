@@ -1,0 +1,61 @@
+<?php
+/**
+ * PostType contract.
+ *
+ * @package NebulaCore
+ */
+
+namespace Eighteen73\Nebula\Core\PostTypes;
+
+use Eighteen73\Nebula\Core\Contracts\PostType;
+
+/**
+ * Class for %slug% post type registration.
+ *
+ * @return PostType
+ */
+class %name% extends PostType {
+	/**
+	 * Get post type name.
+	 *
+	 * @return string
+	 */
+	public function get_name(): string {
+		return '%slug%';
+	}
+
+	/**
+	 * Get post type menu icon.
+	 *
+	 * @return string
+	 */
+	public function get_menu_icon(): string {
+		return 'dashicons-admin-post';
+	}
+
+	/**
+	 * Post type labels configuration.
+	 *
+	 * @return array
+	 */
+	protected function get_labels(): array {
+		return [
+			'singular' => '%name%',
+			'plural'   => '%name%s',
+			'slug'     => '%slug%',
+		];
+	}
+
+	/**
+	 * Editor supports.
+	 *
+	 * @return array
+	 */
+	public function get_editor_supports(): array {
+		return [
+			'title',
+			'editor',
+			'thumbnail',
+		];
+	}
+}

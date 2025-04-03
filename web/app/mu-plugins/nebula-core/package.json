@@ -1,0 +1,11 @@
+{
+	"name": "nebula-core",
+	"version": "0.1.0",
+	"description": "Core functionality for a Nebula project.",
+	"author": "eighteen73",
+	"license": "GPL-2.0-or-later",
+	"scripts": {
+		"create:post-type": "wp nebula create post-type",
+		"create:taxonomy": "wp nebula create taxonomy"
+	}
+}
