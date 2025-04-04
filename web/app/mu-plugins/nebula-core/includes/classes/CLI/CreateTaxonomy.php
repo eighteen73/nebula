@@ -145,23 +145,21 @@ class CreateTaxonomy {
 			return;
 		}
 
-		// Get the array content and the indentation level
+		// Get the array content
 		$array_content = $matches[1];
-		preg_match( '/^(\s*)/', $array_content, $indent_matches );
-		$indent = $indent_matches[1] ?? "\t";
 
 		// Split the array content into lines and clean them
 		$lines = array_map( 'trim', explode( "\n", $array_content ) );
 		$lines = array_filter( $lines ); // Remove empty lines
 
 		// Add the new binding with proper indentation
-		$new_binding = $indent . "Eighteen73\\Nebula\\Core\\Taxonomies\\{$name}::class,";
+		$new_binding = "\tEighteen73\\Nebula\\Core\\Taxonomies\\{$name}::class,";
 		$lines[] = $new_binding;
 
 		// Sort the lines alphabetically
 		sort( $lines );
 
-		// Rebuild the array content
+		// Rebuild the array content with proper indentation
 		$array_content = implode( "\n", $lines );
 		$new_content = preg_replace(
 			'/return\s*\[(.*?)\];/s',
