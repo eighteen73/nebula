@@ -7,14 +7,14 @@
 	"scripts": {
 		"start": "wp-scripts start --experimental-modules",
 		"build": "wp-scripts build --experimental-modules",
-		"format": "npm run format:css && npm run format:js",
 		"lint": "npm run lint:css && npm run lint:js",
 		"lint:css": "stylelint './src/**/*.scss'",
 		"lint:js": "eslint './src/**/*.js'",
+		"format": "npm run format:css && npm run format:js",
 		"format:css": "stylelint --fix './src/**/*.scss'",
 		"format:js": "eslint --fix './src/**/*.js'",
 		"packages-update": "wp-scripts packages-update",
-		"create-block": "npx @wordpress/create-block@latest --template @eighteen73/create-block-template --no-plugin"
+		"create:block": "node scripts/create-block.js"
 	},
 	"files": [
 		"[^.]*"
@@ -24,6 +24,6 @@
 		"@eighteen73/stylelint-config-wordpress": "^1.1.2"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^29.0.0"
+		"@wordpress/scripts": "^30.14.1"
 	}
 }
