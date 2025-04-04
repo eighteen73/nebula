@@ -8,6 +8,5 @@
  */
 
 return [
-	Eighteen73\Nebula\Core\PostTypes\Testimonial::class,
-Eighteen73\Nebula\Core\CLI\Commands::class,
+	Eighteen73\Nebula\Core\CLI\Commands::class,
 ];
