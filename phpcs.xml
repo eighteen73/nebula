@@ -2,23 +2,20 @@
 <ruleset name="Eighteen73-Nebula">
 	<description>Eighteen73 Nebula</description>
 
-	<!-- Scan all files in directory -->
-	<file>.</file>
+	<!-- Scan these directories -->
+	<file>web/app/themes/pulsar</file>
+	<file>web/app/mu-plugins/nebula-core</file>
+	<file>web/app/mu-plugins/nebula-blocks</file>
 
-	<!-- Scan only PHP files -->
-	<arg name="extensions" value="php"/>
+	<!-- Don't scan these directories -->
+	<exclude-pattern>node_modules/</exclude-pattern>
+	<exclude-pattern>vendor/</exclude-pattern>
+	<exclude-pattern>build/</exclude-pattern>
 
-	<!-- Ignore WordPress and Composer dependencies -->
-	<exclude-pattern>/web/wp</exclude-pattern>
-	<exclude-pattern>/web/app/themes/twentytwentyfive</exclude-pattern>
-	<exclude-pattern>/vendor</exclude-pattern>
-	<exclude-pattern>build</exclude-pattern>
+    <rule ref="Eighteen73-WordPress-Default"/>
 
-	<!-- Show colors in console -->
-	<arg value="-colors"/>
-
-	<!-- Show sniff codes in all reports -->
-	<arg value="ns"/>
-
-	<rule ref="Eighteen73-WordPress-Default" />
+	<arg value="sp"/> <!-- Show sniff and progress -->
+	<arg name="colors"/> <!-- Show results with colors. Disable if working on Windows -->
+	<arg name="basepath" value="."/> <!-- Strip the file paths down to the relevant bit -->
+	<arg name="extensions" value="php"/> <!-- Limit to PHP -->
 </ruleset>
