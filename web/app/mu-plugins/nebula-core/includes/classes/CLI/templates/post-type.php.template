@@ -34,19 +34,6 @@ class %name% extends PostType {
 	}
 
 	/**
-	 * Post type labels configuration.
-	 *
-	 * @return array
-	 */
-	protected function get_labels(): array {
-		return [
-			'singular' => '%name%',
-			'plural'   => '%name%s',
-			'slug'     => '%slug%',
-		];
-	}
-
-	/**
 	 * Editor supports.
 	 *
 	 * @return array
@@ -55,7 +42,10 @@ class %name% extends PostType {
 		return [
 			'title',
 			'editor',
+			'excerpt',
 			'thumbnail',
+			'custom-fields',
+			'page-attributes',
 		];
 	}
 }
