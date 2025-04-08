@@ -29,13 +29,13 @@
 		"npm": ">=10.0.0"
 	},
 	"devDependencies": {
+		"concurrently": "^9.1.2",
 		"husky": "^9.1.0",
-		"lint-staged": "^15.2.0",
-		"npm-run-all": "^4.1.5"
+		"lint-staged": "^15.2.0"
 	},
 	"scripts": {
 		"prepare": "husky",
-		"start": "run-p start:theme start:blocks",
+		"start": "concurrently \"npm run start:theme\" \"npm run start:blocks\"",
 		"start:theme": "npm run start -w=pulsar",
 		"start:blocks": "npm run start -w=nebula-blocks",
 		"build": "npm run build --workspaces --if-present",
@@ -46,11 +46,11 @@
 		"format:js": "npm run format:js --workspaces --if-present",
 		"format:php": "composer run format",
 		"lint": "npm run lint --workspaces --if-present",
-		"lint:css": "wp-scripts lint-style --workspaces --if-present",
-		"lint:js": "wp-scripts lint-js --workspaces --if-present",
+		"lint:css": "npm run lint:css --workspaces --if-present",
+		"lint:js": "npm run lint:js --workspaces --if-present",
 		"lint:php": "composer run lint",
 		"lint:md:docs": "npm run lint-md-docs --workspaces --if-present",
-		"lint:pkg-json": "wp-scripts lint-pkg-json",
+		"lint:pkg-json": "npm run lint:pkg-json --workspaces --if-present",
 		"packages-update": "npm run packages-update --workspaces --if-present",
 		"check-engines": "npm run check-engines --workspaces --if-present",
 		"check-licenses": "npm run check-licenses --workspaces --if-present",
