@@ -14,13 +14,13 @@ use Eighteen73\Nebula\Core\Tools\Config;
  * without using the singleton pattern and gives third-party devs easy access to
  * the objects if they need to unhook actions/filters added by the classes.
  *
- * Developers can access the objects via `plugin( $abstract )`.
+ * Developers can access the objects via `plugin( $class_name )`.
  *
  * @access public
- * @param  string $abstract The class abstract
+ * @param  string $class_name The class name
  * @return mixed
  */
-function plugin( string $abstract = '' ): mixed {
+function plugin( string $class_name = '' ): mixed {
 	static $classes = null;
 
 	// On first run, create new components and boot them.
@@ -36,7 +36,7 @@ function plugin( string $abstract = '' ): mixed {
 		}
 	}
 
-	return $abstract ? $classes[ $abstract ] : $classes;
+	return $class_name ? $classes[ $class_name ] : $classes;
 }
 
 /**

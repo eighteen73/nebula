@@ -8,6 +8,7 @@
 namespace Eighteen73\Nebula\Core\CLI;
 
 use WP_CLI;
+use WP_Filesystem_Base;
 
 /**
  * Class CreateTaxonomy
@@ -15,6 +16,14 @@ use WP_CLI;
  * @package Eighteen73\Nebula\Core\CLI
  */
 class CreateTaxonomy {
+	/**
+	 * Stores the initialized WordPress filesystem.
+	 *
+	 * @access private
+	 * @var WP_Filesystem_Base
+	 */
+	private $filesystem;
+
 	/**
 	 * Creates a new taxonomy class
 	 *
@@ -37,11 +46,13 @@ class CreateTaxonomy {
 	 *     Success: Created taxonomy class Category
 	 *
 	 * @param array $args Command arguments.
-	 * @param array $assoc_args Command associative arguments.
 	 */
-	public function __invoke( $args, $assoc_args ) {
+	public function __invoke( $args ) {
 		$input_name = $args[0];
 		$post_types = $args[1];
+
+		// Initialize filesystem
+		$this->init_filesystem();
 
 		// Validate input format
 		if ( ! preg_match( '/^[a-z][a-z0-9_]*$/', $input_name ) ) {
@@ -78,15 +89,38 @@ class CreateTaxonomy {
 		}
 
 		if ( ! is_dir( dirname( $file_path ) ) ) {
-			mkdir( dirname( $file_path ), 0755, true );
+			$this->filesystem->mkdir( dirname( $file_path ), 0755, true );
 		}
 
-		if ( file_put_contents( $file_path, $template ) ) {
+		if ( $this->filesystem->put_contents( $file_path, $template ) ) {
 			$this->add_to_bindings( $class_name );
 			WP_CLI::success( "Created taxonomy class $class_name at: $file_path" );
 		} else {
 			WP_CLI::error( 'Failed to create taxonomy file' );
 		}
+	}
+
+	/**
+	 * Initialize the WordPress filesystem
+	 *
+	 * @return void
+	 */
+	private function init_filesystem() {
+		global $wp_filesystem;
+
+		// If the filesystem is already initialized, use it
+		if ( $wp_filesystem instanceof WP_Filesystem_Base ) {
+			$this->filesystem = $wp_filesystem;
+			return;
+		}
+
+		// Initialize the filesystem
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+
+		// For CLI commands, we can use direct filesystem
+		WP_Filesystem();
+
+		$this->filesystem = $wp_filesystem;
 	}
 
 	/**
@@ -119,7 +153,7 @@ class CreateTaxonomy {
 	 */
 	private function get_template( $name, $slug, $post_types ) {
 		$template_path = NEBULA_CORE_PATH . 'includes/classes/CLI/templates/taxonomy.php.template';
-		$template      = file_get_contents( $template_path );
+		$template      = $this->filesystem->get_contents( $template_path );
 
 		return str_replace(
 			[ '%name%', '%slug%', '%post_types%' ],
@@ -136,7 +170,7 @@ class CreateTaxonomy {
 	 */
 	private function add_to_bindings( $name ) {
 		$bindings_path    = NEBULA_CORE_PATH . 'config/bindings.php';
-		$bindings_content = file_get_contents( $bindings_path );
+		$bindings_content = $this->filesystem->get_contents( $bindings_path );
 
 		// Parse the PHP file to get the array content
 		preg_match( '/return\s*\[(.*?)\];/s', $bindings_content, $matches );
@@ -167,6 +201,6 @@ class CreateTaxonomy {
 			$bindings_content
 		);
 
-		file_put_contents( $bindings_path, $new_content );
+		$this->filesystem->put_contents( $bindings_path, $new_content );
 	}
 }
