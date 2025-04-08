@@ -57,14 +57,14 @@ abstract class Taxonomy implements Bootable {
 	 */
 	protected function get_options(): array {
 		return [
-			'public'            => true,
-			'show_ui'           => true,
-			'hierarchical'      => true,
-			'query_var'         => true,
-			'allow_hierarchy'   => false,
-			'dashboard_glance'  => false,
-			'meta_box'          => 'simple',
-			'show_in_rest'      => true,
+			'public'           => true,
+			'show_ui'          => true,
+			'hierarchical'     => true,
+			'query_var'        => true,
+			'allow_hierarchy'  => false,
+			'dashboard_glance' => false,
+			'meta_box'         => 'simple',
+			'show_in_rest'     => true,
 		];
 	}
 

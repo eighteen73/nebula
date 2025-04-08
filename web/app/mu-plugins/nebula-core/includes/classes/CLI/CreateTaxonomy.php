@@ -51,7 +51,7 @@ class CreateTaxonomy {
 
 		// Convert to PascalCase for class name
 		$class_name = $this->snake_to_pascal( $input_name );
-		$slug = $input_name;
+		$slug       = $input_name;
 
 		// Process post types
 		$post_types_array = array_map( 'trim', explode( ',', $post_types ) );
@@ -69,7 +69,7 @@ class CreateTaxonomy {
 				)
 			) . ']';
 
-		$template = $this->get_template( $class_name, $slug, $post_types_value );
+		$template  = $this->get_template( $class_name, $slug, $post_types_value );
 		$file_path = $this->get_file_path( $class_name );
 
 		if ( file_exists( $file_path ) ) {
@@ -119,7 +119,7 @@ class CreateTaxonomy {
 	 */
 	private function get_template( $name, $slug, $post_types ) {
 		$template_path = NEBULA_CORE_PATH . 'includes/classes/CLI/templates/taxonomy.php.template';
-		$template = file_get_contents( $template_path );
+		$template      = file_get_contents( $template_path );
 
 		return str_replace(
 			[ '%name%', '%slug%', '%post_types%' ],
@@ -135,7 +135,7 @@ class CreateTaxonomy {
 	 * @return void
 	 */
 	private function add_to_bindings( $name ) {
-		$bindings_path = NEBULA_CORE_PATH . 'config/bindings.php';
+		$bindings_path    = NEBULA_CORE_PATH . 'config/bindings.php';
 		$bindings_content = file_get_contents( $bindings_path );
 
 		// Parse the PHP file to get the array content
@@ -154,14 +154,14 @@ class CreateTaxonomy {
 
 		// Add the new binding with proper indentation
 		$new_binding = "\tEighteen73\\Nebula\\Core\\Taxonomies\\{$name}::class,";
-		$lines[] = $new_binding;
+		$lines[]     = $new_binding;
 
 		// Sort the lines alphabetically
 		sort( $lines );
 
 		// Rebuild the array content with proper indentation
 		$array_content = implode( "\n", $lines );
-		$new_content = preg_replace(
+		$new_content   = preg_replace(
 			'/return\s*\[(.*?)\];/s',
 			"return [\n{$array_content}\n];",
 			$bindings_content
