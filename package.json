@@ -10,7 +10,7 @@
 	"author": "eighteen73",
 	"engineStrict": true,
 	"license": "MIT",
-  "keywords": [
+	"keywords": [
 		"nebula",
 		"composer",
 		"eighteen73",
@@ -34,7 +34,7 @@
 		"npm-run-all": "^4.1.5"
 	},
 	"scripts": {
-		"prepare": "husky install",
+		"prepare": "husky",
 		"start": "run-p start:theme start:blocks",
 		"start:theme": "npm run start -w=pulsar",
 		"start:blocks": "npm run start -w=nebula-blocks",

@@ -9,6 +9,6 @@
     "npm run lint:js"
   ],
   "*.php": [
-    "./vendor/bin/phpcs --extensions=php --warning-severity=8 -s"
+    "composer run lint"
   ]
 }
