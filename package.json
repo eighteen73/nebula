@@ -29,9 +29,12 @@
 		"npm": ">=10.0.0"
 	},
 	"devDependencies": {
+		"@eighteen73/browserslist-config-wordpress": "^1.0.1",
+		"@eighteen73/eslint-config-wordpress": "^1.0.3",
+		"@eighteen73/stylelint-config-wordpress": "^1.2.0",
 		"concurrently": "^9.1.2",
-		"husky": "^9.1.0",
-		"lint-staged": "^15.2.0"
+		"husky": "^9.1.7",
+		"lint-staged": "^15.5.0"
 	},
 	"scripts": {
 		"prepare": "husky",
