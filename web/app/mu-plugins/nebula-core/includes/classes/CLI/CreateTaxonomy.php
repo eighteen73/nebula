@@ -1,6 +1,6 @@
 <?php
 /**
- * Scaffold Taxonomy CLI Command
+ * Create Taxonomy CLI Command
  *
  * @package NebulaCore
  */
@@ -8,22 +8,14 @@
 namespace Eighteen73\Nebula\Core\CLI;
 
 use WP_CLI;
-use WP_Filesystem_Base;
+use Eighteen73\Nebula\Core\Contracts\CreateCommand;
 
 /**
  * Class CreateTaxonomy
  *
  * @package Eighteen73\Nebula\Core\CLI
  */
-class CreateTaxonomy {
-	/**
-	 * Stores the initialized WordPress filesystem.
-	 *
-	 * @access private
-	 * @var WP_Filesystem_Base
-	 */
-	private $filesystem;
-
+class CreateTaxonomy extends CreateCommand {
 	/**
 	 * Creates a new taxonomy class
 	 *
@@ -46,8 +38,10 @@ class CreateTaxonomy {
 	 *     Success: Created taxonomy class Category
 	 *
 	 * @param array $args Command arguments.
+	 * @param array $assoc_args Command associative arguments.
+	 * @return void
 	 */
-	public function __invoke( $args ) {
+	public function __invoke( $args, $assoc_args = [] ): void {
 		$input_name = $args[0];
 		$post_types = $args[1];
 
@@ -101,45 +95,12 @@ class CreateTaxonomy {
 	}
 
 	/**
-	 * Initialize the WordPress filesystem
-	 *
-	 * @return void
-	 */
-	private function init_filesystem() {
-		global $wp_filesystem;
-
-		// If the filesystem is already initialized, use it
-		if ( $wp_filesystem instanceof WP_Filesystem_Base ) {
-			$this->filesystem = $wp_filesystem;
-			return;
-		}
-
-		// Initialize the filesystem
-		require_once ABSPATH . 'wp-admin/includes/file.php';
-
-		// For CLI commands, we can use direct filesystem
-		WP_Filesystem();
-
-		$this->filesystem = $wp_filesystem;
-	}
-
-	/**
-	 * Convert snake_case to PascalCase
-	 *
-	 * @param string $name The snake_case name.
-	 * @return string The PascalCase name.
-	 */
-	private function snake_to_pascal( $name ) {
-		return str_replace( ' ', '', ucwords( str_replace( '_', ' ', $name ) ) );
-	}
-
-	/**
 	 * Get the file path for the new taxonomy
 	 *
 	 * @param string $name The taxonomy name.
 	 * @return string The file path.
 	 */
-	private function get_file_path( $name ) {
+	protected function get_file_path( string $name ): string {
 		return NEBULA_CORE_PATH . 'includes/classes/Taxonomies/' . $name . '.php';
 	}
 
@@ -148,16 +109,16 @@ class CreateTaxonomy {
 	 *
 	 * @param string $name The taxonomy name.
 	 * @param string $slug The taxonomy slug.
-	 * @param string $post_types The post types value.
+	 * @param mixed  ...$args Additional arguments for the template.
 	 * @return string The processed template.
 	 */
-	private function get_template( $name, $slug, $post_types ) {
+	protected function get_template( string $name, string $slug, ...$args ): string {
 		$template_path = NEBULA_CORE_PATH . 'includes/classes/CLI/templates/taxonomy.php.template';
 		$template      = $this->filesystem->get_contents( $template_path );
 
 		return str_replace(
 			[ '%name%', '%slug%', '%post_types%' ],
-			[ $name, $slug, $post_types ],
+			[ $name, $slug, $args[0] ?? '' ],
 			$template
 		);
 	}
@@ -168,7 +129,7 @@ class CreateTaxonomy {
 	 * @param string $name The taxonomy name.
 	 * @return void
 	 */
-	private function add_to_bindings( $name ) {
+	protected function add_to_bindings( string $name ): void {
 		$bindings_path    = NEBULA_CORE_PATH . 'config/bindings.php';
 		$bindings_content = $this->filesystem->get_contents( $bindings_path );
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * Scaffold Post Type CLI Command
+ * Create Post Type CLI Command
  *
  * @package NebulaCore
  */
@@ -8,22 +8,14 @@
 namespace Eighteen73\Nebula\Core\CLI;
 
 use WP_CLI;
-use WP_Filesystem_Base;
+use Eighteen73\Nebula\Core\Contracts\CreateCommand;
 
 /**
  * Class CreatePostType
  *
  * @package Eighteen73\Nebula\Core\CLI
  */
-class CreatePostType {
-	/**
-	 * Stores the initialized WordPress filesystem.
-	 *
-	 * @access private
-	 * @var WP_Filesystem_Base
-	 */
-	private $filesystem;
-
+class CreatePostType extends CreateCommand {
 	/**
 	 * Creates a new post type class
 	 *
@@ -48,8 +40,9 @@ class CreatePostType {
 	 *
 	 * @param array $args Command arguments.
 	 * @param array $assoc_args Command associative arguments.
+	 * @return void
 	 */
-	public function __invoke( $args, $assoc_args ) {
+	public function __invoke( $args, $assoc_args = [] ): void {
 		$input_name = $args[0];
 
 		// Initialize filesystem
@@ -91,45 +84,12 @@ class CreatePostType {
 	}
 
 	/**
-	 * Initialize the WordPress filesystem
-	 *
-	 * @return void
-	 */
-	private function init_filesystem() {
-		global $wp_filesystem;
-
-		// If the filesystem is already initialized, use it
-		if ( $wp_filesystem instanceof WP_Filesystem_Base ) {
-			$this->filesystem = $wp_filesystem;
-			return;
-		}
-
-		// Initialize the filesystem
-		require_once ABSPATH . 'wp-admin/includes/file.php';
-
-		// For CLI commands, we can use direct filesystem
-		WP_Filesystem();
-
-		$this->filesystem = $wp_filesystem;
-	}
-
-	/**
-	 * Convert snake_case to PascalCase
-	 *
-	 * @param string $name The snake_case name.
-	 * @return string The PascalCase name.
-	 */
-	private function snake_to_pascal( $name ) {
-		return str_replace( ' ', '', ucwords( str_replace( '_', ' ', $name ) ) );
-	}
-
-	/**
 	 * Get the file path for the new post type
 	 *
 	 * @param string $name The post type name.
 	 * @return string The file path.
 	 */
-	private function get_file_path( $name ) {
+	protected function get_file_path( string $name ): string {
 		return NEBULA_CORE_PATH . 'includes/classes/PostTypes/' . $name . '.php';
 	}
 
@@ -138,9 +98,10 @@ class CreatePostType {
 	 *
 	 * @param string $name The post type name.
 	 * @param string $slug The post type slug.
+	 * @param mixed  ...$args Additional arguments for the template.
 	 * @return string The processed template.
 	 */
-	private function get_template( $name, $slug ) {
+	protected function get_template( string $name, string $slug, ...$args ): string {
 		$template_path = NEBULA_CORE_PATH . 'includes/classes/CLI/templates/post-type.php.template';
 		$template      = $this->filesystem->get_contents( $template_path );
 
@@ -157,7 +118,7 @@ class CreatePostType {
 	 * @param string $name The post type name.
 	 * @return void
 	 */
-	private function add_to_bindings( $name ) {
+	protected function add_to_bindings( string $name ): void {
 		$bindings_path    = NEBULA_CORE_PATH . 'config/bindings.php';
 		$bindings_content = $this->filesystem->get_contents( $bindings_path );
 
@@ -200,7 +161,7 @@ class CreatePostType {
 	 * @param string $post_type The post type name.
 	 * @return void
 	 */
-	private function create_taxonomy( $taxonomy_name, $post_type ) {
+	private function create_taxonomy( string $taxonomy_name, string $post_type ): void {
 		// Validate taxonomy name format
 		if ( ! preg_match( '/^[a-z][a-z0-9_]*$/', $taxonomy_name ) ) {
 			WP_CLI::error( 'Taxonomy name must be in snake_case format (lowercase with underscores between words). Example: portfolio_category' );
@@ -247,7 +208,7 @@ class CreatePostType {
 	 * @param string $name The taxonomy name.
 	 * @return void
 	 */
-	private function add_taxonomy_to_bindings( $name ) {
+	private function add_taxonomy_to_bindings( string $name ): void {
 		$bindings_path    = NEBULA_CORE_PATH . 'config/bindings.php';
 		$bindings_content = $this->filesystem->get_contents( $bindings_path );
 

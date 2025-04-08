@@ -5,7 +5,7 @@
 	"author": "eighteen73",
 	"license": "GPL-2.0-or-later",
 	"scripts": {
-		"create:post-type": "wp nebula create post-type",
-		"create:taxonomy": "wp nebula create taxonomy"
+		"create:post-type": "node scripts/create-post-type.js",
+		"create:taxonomy": "node scripts/create-taxonomy.js"
 	}
 }
