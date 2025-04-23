@@ -29,11 +29,13 @@ node_modules
 # Composer
 composer.lock
 vendor
+auth.json
 
 # WP-CLI
 wp-cli.local.yml
 
 # OS & Project files
+web/.user.ini
 .DS_Store
 .idea
 

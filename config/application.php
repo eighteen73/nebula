@@ -75,21 +75,23 @@ Config::define( 'WP_CONTENT_URL', Config::get( 'WP_HOME' ) . Config::get( 'CONTE
 /**
  * DB settings
  */
-Config::define( 'DB_NAME', $_ENV['DB_NAME'] );
-Config::define( 'DB_USER', $_ENV['DB_USER'] );
-Config::define( 'DB_PASSWORD', $_ENV['DB_PASSWORD'] );
+Config::define( 'DB_NAME', $_ENV['DB_NAME'] ?? '' );
+Config::define( 'DB_USER', $_ENV['DB_USER'] ?? '' );
+Config::define( 'DB_PASSWORD', $_ENV['DB_PASSWORD'] ?? '' );
 Config::define( 'DB_HOST', $_ENV['DB_HOST'] ?? 'localhost' );
 Config::define( 'DB_CHARSET', 'utf8mb4' );
 Config::define( 'DB_COLLATE', '' );
 $table_prefix = $_ENV['DB_PREFIX'] ?? 'wp_';
 
 if ( isset( $_ENV['DATABASE_URL'] ) ) {
-	$dsn = (object) wp_parse_url( $_ENV['DATABASE_URL'] );
-
-	Config::define( 'DB_NAME', substr( $dsn->path, 1 ) );
-	Config::define( 'DB_USER', $dsn->user );
-	Config::define( 'DB_PASSWORD', isset( $dsn->pass ) ? $dsn->pass : null );
-	Config::define( 'DB_HOST', isset( $dsn->port ) ? "{$dsn->host}:{$dsn->port}" : $dsn->host );
+	$dsn = parse_url( $_ENV['DATABASE_URL'] );
+	Config::define( 'DB_NAME', substr( $dsn['path'], 1 ) );
+	Config::define( 'DB_USER', $dsn['user'] );
+	Config::define( 'DB_PASSWORD', $dsn['pass'] ?? null );
+	Config::define( 'DB_HOST', isset( $dsn['port'] ) ? "{$dsn['host']}:{$dsn['port']}" : $dsn['host'] );
+	if ( str_contains( $dsn['query'] ?? '', 'ssl-mode=REQUIRED' ) ) {
+		Config::define( 'MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL );
+	}
 }
 
 /**
@@ -103,6 +105,11 @@ Config::define( 'AUTH_SALT', $_ENV['AUTH_SALT'] );
 Config::define( 'SECURE_AUTH_SALT', $_ENV['SECURE_AUTH_SALT'] );
 Config::define( 'LOGGED_IN_SALT', $_ENV['LOGGED_IN_SALT'] );
 Config::define( 'NONCE_SALT', $_ENV['NONCE_SALT'] );
+
+/**
+ * Multisite
+ */
+Config::define( 'WP_ALLOW_MULTISITE', false );
 
 /**
  * Custom Settings
