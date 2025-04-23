@@ -67,6 +67,7 @@ abstract class PostType implements Bootable {
 			'thumbnail',
 			'custom-fields',
 			'page-attributes',
+			'revisions',
 		];
 	}
 
