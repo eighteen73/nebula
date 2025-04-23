@@ -1,0 +1,64 @@
+{
+	"name": "eighteen73-nebula",
+	"version": "1.0.0",
+	"description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
+	"workspaces": [
+		"web/app/themes/pulsar",
+		"web/app/mu-plugins/nebula-blocks",
+		"web/app/mu-plugins/nebula-core"
+	],
+	"author": "eighteen73",
+	"engineStrict": true,
+	"license": "MIT",
+	"keywords": [
+		"nebula",
+		"composer",
+		"eighteen73",
+		"wordpress"
+	],
+	"homepage": "https://github.com/eighteen73/nebula",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/eighteen73/nebula.git"
+	},
+	"bugs": {
+		"url": "https://github.com/eighteen73/nebula/issues"
+	},
+	"engines": {
+		"node": ">=20.0.0",
+		"npm": ">=10.0.0"
+	},
+	"devDependencies": {
+		"@eighteen73/browserslist-config-wordpress": "^1.0.1",
+		"@eighteen73/eslint-config-wordpress": "^1.0.3",
+		"@eighteen73/stylelint-config-wordpress": "^1.2.0",
+		"concurrently": "^9.1.2",
+		"husky": "^9.1.7",
+		"lint-staged": "^15.5.0"
+	},
+	"scripts": {
+		"prepare": "husky",
+		"start": "concurrently \"npm run start:theme\" \"npm run start:blocks\"",
+		"start:theme": "npm run start -w=pulsar",
+		"start:blocks": "npm run start -w=nebula-blocks",
+		"build": "npm run build --workspaces --if-present",
+		"watch": "npm run start",
+		"production": "npm run build",
+		"format": "npm run format --workspaces --if-present",
+		"format:css": "npm run format:css --workspaces --if-present",
+		"format:js": "npm run format:js --workspaces --if-present",
+		"format:php": "composer run format",
+		"lint": "npm run lint --workspaces --if-present",
+		"lint:css": "npm run lint:css --workspaces --if-present",
+		"lint:js": "npm run lint:js --workspaces --if-present",
+		"lint:php": "composer run lint",
+		"lint:md:docs": "npm run lint-md-docs --workspaces --if-present",
+		"lint:pkg-json": "npm run lint:pkg-json --workspaces --if-present",
+		"packages-update": "npm run packages-update --workspaces --if-present",
+		"check-engines": "npm run check-engines --workspaces --if-present",
+		"check-licenses": "npm run check-licenses --workspaces --if-present",
+		"create:block": "npm run create:block -w=nebula-blocks",
+		"create:post-type": "npm run create:post-type -w=nebula-core",
+		"create:taxonomy": "npm run create:taxonomy -w=nebula-core"
+	}
+}

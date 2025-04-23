@@ -2,14 +2,18 @@
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*/
+!web/app/mu-plugins/nebula-core
+!web/app/mu-plugins/nebula-blocks
 web/app/upgrade
 web/app/uploads/*
 !web/app/uploads/.gitkeep
-web/app/libraries/*
 
 # WordPress
 web/wp
 web/.htaccess
+
+# Themes
+web/app/themes/twentytwentyfour
 
 # Logs
 *.log
@@ -19,9 +23,12 @@ web/.htaccess
 .env.*
 !.env.example
 
+# Node modules
+node_modules
+
 # Composer
-/composer.lock
-/vendor
+composer.lock
+vendor
 auth.json
 
 # WP-CLI
@@ -35,6 +42,4 @@ web/.user.ini
 # Caching and performance
 web/app/cache
 web/app/advanced-cache.php
-web/app/wp-cache-config.php
-web/app/webp-express
-/web/app/themes/twentytwentyfour
+web/app/object-cache.php

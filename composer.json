@@ -6,11 +6,11 @@
   "authors": [
     {
       "name": "Ed Jeavons",
-      "email": "ed@orphans.co.uk"
+      "email": "ed@eighteen73.co.uk"
     },
     {
       "name": "Brett Mason",
-      "email": "brett@orphans.co.uk"
+      "email": "brett@eighteen73.co.uk"
     }
   ],
   "keywords": [
@@ -26,21 +26,28 @@
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "Eighteen73\\Nebula\\Core\\": "web/app/mu-plugins/nebula-core/includes/classes",
+      "Eighteen73\\Nebula\\Blocks\\": "web/app/mu-plugins/nebula-blocks/includes/classes"
+    }
+  },
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.2",
     "composer/installers": "^2.2.0",
     "eighteen73/nebula-tools": "^v1.1.0",
     "eighteen73/orbit": "^v1.2.0",
     "vlucas/phpdotenv": "^5.5",
     "roots/wordpress": "^6.4.2",
     "roots/wp-config": "1.0.0",
-    "wpackagist-theme/twentytwentyfour": "^1.0"
+    "wpackagist-theme/twentytwentyfour": "^1.2",
+    "johnbillion/extended-cpts": "^5.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.8.0",
     "roave/security-advisories": "dev-latest",
-    "eighteen73/satellite": "^1.1",
-    "eighteen73/wordpress-coding-standards": "^2.0"
+    "eighteen73/wordpress-coding-standards": "^2.0",
+    "eighteen73/satellite": "^1.1"
   },
   "config": {
     "optimize-autoloader": true,
@@ -66,8 +73,7 @@
     "post-create-project-cmd": [
       "Eighteen73\\NebulaTools\\ComposerScripts\\PostCreateProject::run"
     ],
-    "test": [
-      "phpcs"
-    ]
+    "lint": "./vendor/bin/phpcs --standard=./phpcs.xml",
+    "format": "./vendor/bin/phpcbf --standard=./phpcs.xml"
   }
 }

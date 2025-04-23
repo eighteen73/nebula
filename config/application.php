@@ -138,7 +138,7 @@ Config::define( 'WP_CACHE', true );
 Config::define( 'WP_DEBUG_DISPLAY', false );
 Config::define( 'WP_DEBUG_LOG', false );
 Config::define( 'SCRIPT_DEBUG', false );
-ini_set( 'display_errors', '0' ); // PHPCS:ignore:WordPress.PHP.IniSet.display_errors_Blacklisted
+ini_set( 'display_errors', '0' ); // PHPCS:ignore:WordPress.PHP.IniSet.display_errors_Disallowed
 
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer

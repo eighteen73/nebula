@@ -1,0 +1,14 @@
+{
+  "*.scss": [
+    "npm run lint:css"
+  ],
+  "*.js": [
+    "npm run lint:js"
+  ],
+  "*.jsx": [
+    "npm run lint:js"
+  ],
+  "*.php": [
+    "composer run lint"
+  ]
+}
