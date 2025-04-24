@@ -19,8 +19,10 @@ Nebula is heavily based on [Bedrock](https://github.com/roots/bedrock) by [Roots
 
 ## Requirements
 
-- PHP >= 7.4
-- Composer - [Install](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx)
+- PHP >= 8.2
+- Node 20
+
+It is assumed you also have Composer and NPM installed.
 
 ## Installation
 

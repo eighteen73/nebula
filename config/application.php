@@ -8,6 +8,8 @@
  * can.
  *
  * @package Nebula
+ *
+ * @phpcs:disable WordPress.WP.AlternativeFunctions.parse_url_parse_url
  */
 
 namespace Eighteen73\Nebula;
