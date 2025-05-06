@@ -24,6 +24,6 @@
 		"@eighteen73/stylelint-config-wordpress": "^1.1.2"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.14.1"
+		"@wordpress/scripts": "^30.15.0"
 	}
 }
