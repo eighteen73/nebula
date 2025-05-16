@@ -203,12 +203,12 @@ abstract class PostType implements Bootable {
 	/**
 	 * Filter the viewability of the post type.
 	 *
-	 * @param bool                 $is_viewable Whether the post type is viewable.
-	 * @param string|\WP_Post_Type $post_type The post type.
+	 * @param bool          $is_viewable Whether the post type is viewable.
+	 * @param \WP_Post_Type $post_type The post type.
 	 * @return bool
 	 */
-	public function is_post_type_viewable( bool $is_viewable, string|\WP_Post_Type $post_type ): bool {
-		if ( $post_type === $this->get_name() ) {
+	public function is_post_type_viewable( bool $is_viewable, \WP_Post_Type $post_type ): bool {
+		if ( $post_type->name === $this->get_name() ) {
 			return $this->get_visibility();
 		}
 
