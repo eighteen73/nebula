@@ -27,7 +27,6 @@ web/app/themes/twentytwentyfour
 node_modules
 
 # Composer
-composer.lock
 vendor
 auth.json
 
