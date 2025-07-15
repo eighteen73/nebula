@@ -27,7 +27,7 @@ web/app/themes/twentytwentyfour
 node_modules
 
 # Composer
-vendor
+/vendor
 auth.json
 
 # WP-CLI
