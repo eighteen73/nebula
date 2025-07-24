@@ -41,7 +41,7 @@
     "roots/wordpress": "^6.8.2",
     "roots/wp-config": "1.0.0",
     "wpackagist-theme/twentytwentyfour": "^1.2",
-    "johnbillion/extended-cpts": "^5.0"
+    "johnbillion/extended-cpts": "^5.1"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.13.0",
