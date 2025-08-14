@@ -19,13 +19,13 @@
   "support": {
     "issues": "https://github.com/eighteen73/nebula/issues"
   },
-  "repositories": [
-    {
+  "repositories": {
+    "wpackagist": {
       "type": "composer",
       "url": "https://wpackagist.org",
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
     }
-  ],
+  },
   "autoload": {
     "psr-4": {
       "Eighteen73\\Nebula\\Core\\": "web/app/mu-plugins/nebula-core/includes/classes",
