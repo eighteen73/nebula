@@ -14,18 +14,26 @@
     }
   ],
   "keywords": [
-    "nebula", "composer", "eighteen73", "wordpress", "wp", "wp-config"
+    "nebula",
+    "composer",
+    "eighteen73",
+    "wordpress",
+    "wp",
+    "wp-config"
   ],
   "support": {
     "issues": "https://github.com/eighteen73/nebula/issues"
   },
-  "repositories": [
-    {
+  "repositories": {
+    "wpackagist": {
       "type": "composer",
       "url": "https://wpackagist.org",
-      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
     }
-  ],
+  },
   "autoload": {
     "psr-4": {
       "Eighteen73\\Nebula\\Core\\": "web/app/mu-plugins/nebula-core/includes/classes",
@@ -33,7 +41,7 @@
     }
   },
   "require": {
-    "php": ">=8.2",
+    "php": ">=8.3",
     "composer/installers": "^2.2.0",
     "eighteen73/nebula-tools": "^v2.0.0",
     "eighteen73/orbit": "^v2.1.0",
@@ -62,9 +70,15 @@
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },
