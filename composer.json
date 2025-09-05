@@ -52,7 +52,7 @@
     "johnbillion/extended-cpts": "^5.1"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.13.0",
+    "squizlabs/php_codesniffer": "^3.13.4",
     "roave/security-advisories": "dev-latest",
     "eighteen73/wordpress-coding-standards": "^2.0"
   },
