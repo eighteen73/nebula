@@ -1,0 +1,16 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - run: npm run format:css
+      glob: "*.scss"
+      stage_fixed: true
+
+    - run: npm run format:js
+      glob:
+        - "*.js"
+        - "*.jsx"
+      stage_fixed: true
+
+    - run: npm run format:php
+      glob: "*.php"
+      stage_fixed: true

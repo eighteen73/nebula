@@ -33,11 +33,10 @@
 		"@eighteen73/eslint-config-wordpress": "^1.0.3",
 		"@eighteen73/stylelint-config-wordpress": "^1.2.0",
 		"concurrently": "^9.1.2",
-		"husky": "^9.1.7",
-		"lint-staged": "^15.5.0"
+		"lefthook": "^1.13.6"
 	},
 	"scripts": {
-		"prepare": "husky",
+		"prepare": "npx lefthook install",
 		"start": "concurrently \"npm run start:theme\" \"npm run start:blocks\"",
 		"start:theme": "npm run start -w=pulsar",
 		"start:blocks": "npm run start -w=nebula-blocks",
