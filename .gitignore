@@ -1,46 +1,80 @@
-# Application
+# ──────────────────────────────────────────────────────────────
+# Plugins - ignore all by default
+# Developers: unignore plugin directories below
+# ──────────────────────────────────────────────────────────────
 web/app/plugins/*
 !web/app/plugins/.gitkeep
-web/app/mu-plugins/*/
-!web/app/mu-plugins/nebula-core
-!web/app/mu-plugins/nebula-blocks
-web/app/upgrade
-web/app/uploads/*
-!web/app/uploads/.gitkeep
+# Keep non-Composer plugins by uncommenting, e.g.
+#!web/app/plugins/your-bespoke-plugin/
 
-# Theme
+# ──────────────────────────────────────────────────────────────
+# MU plugins - ignore all by default
+# Developers: unignore mu-plugin directories/files below
+# ──────────────────────────────────────────────────────────────
+web/app/mu-plugins/*
+!web/app/mu-plugins/nebula-core/
+!web/app/mu-plugins/nebula-blocks/
+# Keep non-Composer mu-plugins by uncommenting, e.g.
+#!web/app/mu-plugins/your-mu-plugin/
+#!web/app/mu-plugins/your-mu-plugin.php
+
+# ──────────────────────────────────────────────────────────────
+# Themes - ignore all by default
+# Developers: unignore your theme(s) below
+# ──────────────────────────────────────────────────────────────
 web/app/themes/*
 !web/app/themes/.gitkeep
+# Keep your theme by uncommenting, e.g.
+#!web/app/themes/your-custom-theme/
 
-# WordPress
-web/wp
-web/.htaccess
-
-# Logs
-*.log
-
-# Dotenv
-.env
-.env.*
-!.env.example
-
-# Node modules
-node_modules
-
-# Composer
-/vendor
-auth.json
-
-# WP-CLI
-wp-cli.local.yml
-
-# OS & Project files
-web/.user.ini
-.DS_Store
-.idea
-
-# Caching and performance
+# ──────────────────────────────────────────────────────────────
+# Caching and performance drop-ins (generated)
+# ──────────────────────────────────────────────────────────────
 web/app/cache
 web/app/advanced-cache.php
 web/app/object-cache.php
 web/app/db.php
+
+# ──────────────────────────────────────────────────────────────
+# Nebula / WordPress core and server files (generated/managed)
+# ──────────────────────────────────────────────────────────────
+web/wp
+web/.htaccess
+web/.user.ini
+
+# ──────────────────────────────────────────────────────────────
+# Application content - uploads and upgrades (environment data)
+# ──────────────────────────────────────────────────────────────
+web/app/upgrade
+web/app/uploads/*
+!web/app/uploads/.gitkeep
+
+# ──────────────────────────────────────────────────────────────
+# Environment and secrets
+# ──────────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+auth.json
+
+# ──────────────────────────────────────────────────────────────
+# Dependencies (managed by tooling)
+# ──────────────────────────────────────────────────────────────
+/vendor
+node_modules
+
+# ──────────────────────────────────────────────────────────────
+# Tooling and local config
+# ──────────────────────────────────────────────────────────────
+wp-cli.local.yml
+
+# ──────────────────────────────────────────────────────────────
+# Logs
+# ──────────────────────────────────────────────────────────────
+*.log
+
+# ──────────────────────────────────────────────────────────────
+# OS and editor cruft
+# ──────────────────────────────────────────────────────────────
+.DS_Store
+.idea
