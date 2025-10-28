@@ -12,9 +12,6 @@ web/app/uploads/*
 web/wp
 web/.htaccess
 
-# Themes
-web/app/themes/twentytwentyfour
-
 # Logs
 *.log
 
