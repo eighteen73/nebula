@@ -2,12 +2,12 @@ pre-commit:
   parallel: true
   jobs:
     - name: css
-      run: stylelint {staged_files} --fix
+      run: npx stylelint {staged_files} --fix
       glob: "**/*.scss"
       stage_fixed: true
 
     - name: js
-      run: eslint {staged_files} --fix
+      run: npx eslint {staged_files} --fix
       glob:
         - "**/*.js"
         - "**/*.jsx"
