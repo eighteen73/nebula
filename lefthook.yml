@@ -1,0 +1,19 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: css
+      run: npx stylelint {staged_files} --fix
+      glob: "**/*.scss"
+      stage_fixed: true
+
+    - name: js
+      run: npx eslint {staged_files} --fix
+      glob:
+        - "**/*.js"
+        - "**/*.jsx"
+      stage_fixed: true
+
+    - name: php
+      run: composer run format {staged_files}
+      glob: "**/*.php"
+      stage_fixed: true
