@@ -5,7 +5,6 @@
 	<!-- Scan these directories -->
 	<file>web/app/themes/pulsar</file>
 	<file>web/app/mu-plugins/nebula-core</file>
-	<file>web/app/mu-plugins/nebula-blocks</file>
 
 	<!-- Don't scan these directories -->
 	<exclude-pattern>node_modules/</exclude-pattern>
