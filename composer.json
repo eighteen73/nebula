@@ -36,8 +36,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Eighteen73\\Nebula\\Core\\": "web/app/mu-plugins/nebula-core/includes/classes",
-      "Eighteen73\\Nebula\\Blocks\\": "web/app/mu-plugins/nebula-blocks/includes/classes"
+      "Eighteen73\\Nebula\\Core\\": "web/app/mu-plugins/nebula-core/includes/classes"
     }
   },
   "require": {
