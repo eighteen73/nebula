@@ -3,14 +3,14 @@ pre-commit:
   jobs:
     - name: css
       run: npx stylelint {staged_files} --fix
-      glob: "**/*.scss"
+      glob: "**/*.{css,scss}"
+      exclude: "**/build/**"
       stage_fixed: true
 
     - name: js
       run: npx eslint {staged_files} --fix
-      glob:
-        - "**/*.js"
-        - "**/*.jsx"
+      glob: "**/*.{js,jsx,ts,tsx}"
+      exclude: "**/build/**"
       stage_fixed: true
 
     - name: php
