@@ -4,16 +4,17 @@ pre-commit:
     - name: css
       run: npx stylelint {staged_files} --fix
       glob: "**/*.{css,scss}"
-      exclude: "**/build/**"
+      exclude: "(^|/)build/"
       stage_fixed: true
 
     - name: js
       run: npx eslint {staged_files} --fix
       glob: "**/*.{js,jsx,ts,tsx}"
-      exclude: "**/build/**"
+      exclude: "(^|/)build/"
       stage_fixed: true
 
     - name: php
       run: composer run format {staged_files}
       glob: "**/*.php"
+      exclude: "(^|/)build/"
       stage_fixed: true
