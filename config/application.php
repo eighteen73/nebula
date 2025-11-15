@@ -150,8 +150,18 @@ if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && $_SERVER['HTTP_X_FORWARDED_P
 	$_SERVER['HTTPS'] = 'on';
 }
 
-$env_config = __DIR__ . '/environments/' . Config::get( 'WP_ENVIRONMENT_TYPE' ) . '.php';
+/**
+ * Extra config may be included by adding a PHP file ./includes/*.php. It is useful for grouping plugin
+ * config for clarity. These file are loaded before environment-specific overrides.
+ */
+foreach ( glob( __DIR__ . '/includes/*.php' ) as $filename ) {
+	require_once $filename;
+}
 
+/**
+ * Environment-specific overrides
+ */
+$env_config = __DIR__ . '/environments/' . Config::get( 'WP_ENVIRONMENT_TYPE' ) . '.php';
 if ( file_exists( $env_config ) ) {
 	require_once $env_config;
 }
