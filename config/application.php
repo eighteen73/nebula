@@ -36,7 +36,7 @@ $webroot_dir = $root_dir . '/web';
  */
 $dotenv = Dotenv::createMutable( $root_dir );
 $dotenv->load();
-$dotenv->required( [ 'WP_HOME', 'WP_SITEURL' ] );
+$dotenv->required( [ 'WP_HOME' ] );
 if ( ! isset( $_ENV['DATABASE_URL'] ) ) {
 	$dotenv->required( [ 'DB_NAME', 'DB_USER', 'DB_PASSWORD' ] );
 }
@@ -64,8 +64,8 @@ switch ( $_ENV['WP_ENVIRONMENT_TYPE'] ) {
 /**
  * URLs
  */
-Config::define( 'WP_HOME', $_ENV['WP_HOME'] );
-Config::define( 'WP_SITEURL', $_ENV['WP_SITEURL'] );
+Config::define( 'WP_HOME', rtrim( $_ENV['WP_HOME'], '/' ) );
+Config::define( 'WP_SITEURL', Config::get('WP_HOME') . '/wp' );
 
 /**
  * Custom Content Directory
@@ -137,10 +137,10 @@ Config::define( 'WP_CACHE', true );
 /**
  * Debugging Settings
  */
+Config::define( 'WP_DEBUG', false );
 Config::define( 'WP_DEBUG_DISPLAY', false );
 Config::define( 'WP_DEBUG_LOG', false );
 Config::define( 'SCRIPT_DEBUG', false );
-ini_set( 'display_errors', '0' ); // PHPCS:ignore:WordPress.PHP.IniSet.display_errors_Disallowed
 
 /**
  * Allow WordPress to detect HTTPS when used behind a reverse proxy or a load balancer
