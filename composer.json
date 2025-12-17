@@ -45,7 +45,7 @@
     "eighteen73/nebula-tools": "^v2.0.0",
     "eighteen73/orbit": "^2.5.0",
     "johnbillion/extended-cpts": "^5.1",
-    "roots/wordpress": "^6.8.3",
+    "roots/wordpress": "^6.9",
     "roots/wp-config": "1.0.0",
     "vlucas/phpdotenv": "^5.5",
     "wpackagist-theme/twentytwentyfive": "^1.4"
