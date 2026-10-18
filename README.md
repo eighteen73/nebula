@@ -19,10 +19,14 @@ Nebula is heavily based on [Bedrock](https://github.com/roots/bedrock) by [Roots
 
 ## Requirements
 
-- PHP >= 8.2
-- Node 20
+- PHP >= 8.3
+- Node 24.x
 
 It is assumed you also have Composer and NPM installed.
+
+## Dependency policy
+
+This starter does not include `composer.lock` or `package-lock.json`, so fresh installs resolve the latest compatible dependencies allowed by the manifests and the local runtime. After creating a project and installing its dependencies, commit the generated lockfiles in that project's repository for reproducible subsequent installs.
 
 ## Installation
 

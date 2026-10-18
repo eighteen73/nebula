@@ -24,7 +24,7 @@
 		"url": "https://github.com/eighteen73/nebula/issues"
 	},
 	"engines": {
-		"node": ">=20.0.0",
+		"node": "24.x",
 		"npm": ">=10.0.0"
 	},
 	"devDependencies": {
