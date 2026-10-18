@@ -13,6 +13,7 @@ web/app/plugins/*
 # ──────────────────────────────────────────────────────────────
 web/app/mu-plugins/*
 !web/app/mu-plugins/nebula-core/
+!web/app/mu-plugins/nebula-autoloader.php
 # Keep non-Composer mu-plugins by uncommenting, e.g.
 #!web/app/mu-plugins/your-mu-plugin/
 #!web/app/mu-plugins/your-mu-plugin.php

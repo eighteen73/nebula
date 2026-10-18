@@ -43,12 +43,12 @@
     "php": ">=8.3",
     "composer/installers": "^2.2.0",
     "eighteen73/nebula-tools": "^v2.0.0",
-    "eighteen73/orbit": "^2.3.4",
+    "eighteen73/orbit": "^2.5.5",
     "johnbillion/extended-cpts": "^5.1",
-    "roots/wordpress": "^6.8.3",
+    "roots/wordpress": "^6.9.4",
     "roots/wp-config": "1.0.0",
     "vlucas/phpdotenv": "^5.5",
-    "wpackagist-theme/twentytwentyfive": "^1.3"
+    "wpackagist-theme/twentytwentyfive": "^1.4"
   },
   "require-dev": {
     "eighteen73/wordpress-coding-standards": "^2.0",
